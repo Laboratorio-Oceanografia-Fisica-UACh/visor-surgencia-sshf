@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B3954">
+  <title>Visor de surgencia costera</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="./css/estilo.css">
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script defer src="https://cdn.plot.ly/plotly-basic-2.35.2.min.js"></script>
+  <script type="module" src="./js/app.js"></script>
+</head>
+<body>
+  <div id="aviso-ejemplo" class="aviso-ejemplo" hidden>Datos de ejemplo: las series y los textos son sintéticos y no corresponden a resultados de la tesis.</div>
+  <header class="cabecera">
+    <a class="marca" href="#inicio" aria-label="Ir al inicio"><span class="marca-icono">≈</span><span>VISOR DE LA TESIS<br><small id="marca-autor"></small></span></a>
+    <a class="enlace-cabecera" href="#metodo">Conoce el método <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="inicio">
+    <section class="hero" aria-labelledby="titulo-proyecto">
+      <div class="hero-texto">
+        <p class="sobretitulo">CHILE · COSTA DEL PACÍFICO</p>
+        <h1 id="titulo-proyecto">Visor de surgencia costera</h1>
+        <p id="subtitulo-proyecto" class="subtitulo"></p>
+        <p id="resumen-proyecto" class="intro"></p>
+        <div id="meta-proyecto" class="meta-proyecto"></div>
+      </div>
+      <div class="hero-grafico" aria-hidden="true"><span class="linea linea-1"></span><span class="linea linea-2"></span><span class="linea linea-3"></span><span id="hero-numero" class="hero-numero"></span><span class="hero-etiqueta">FOCOS COSTEROS</span></div>
+    </section>
+
+    <section class="explorador" aria-labelledby="explorador-titulo">
+      <div class="seccion-encabezado"><div><p class="sobretitulo">01 / EXPLORAR</p><h2 id="explorador-titulo">Focos de una costa</h2></div><p>Selecciona un foco en el mapa o en la lista para explorar sus resultados.</p></div>
+      <div class="explorador-grid">
+        <div class="mapa-columna">
+          <div class="mapa-marco"><div id="mapa" role="application" aria-label="Mapa interactivo de los focos de la costa de Chile"></div><div class="mapa-etiqueta">PACÍFICO SUR / CHILE</div></div>
+          <div class="leyenda" aria-label="Leyenda del mapa"><span><i class="muestra evidencia"></i> Con evidencia tras Holm</span><span><i class="muestra positivo"></i> Positivo sin ajuste</span><span><i class="muestra neutro"></i> Sin diferencia</span><span><i class="muestra hueco"></i> Hueco: no supera Holm</span></div>
+          <div id="lista-focos" class="lista-focos" aria-label="Seleccionar foco"></div>
+        </div>
+        <div id="panel" class="panel" aria-live="polite"><div class="panel-vacio"><span class="panel-vacio-icono">↗</span><h3>Selecciona un foco</h3><p>Los resultados, las series y las figuras aparecerán aquí.</p></div></div>
+      </div>
+    </section>
+
+    <section id="investigacion" class="contenido-general" aria-labelledby="investigacion-titulo"><p class="sobretitulo">02 / INVESTIGACIÓN</p><h2 id="investigacion-titulo">La investigación</h2><div id="resultado-general"></div><div id="figuras-generales" class="galeria"></div></section>
+    <section id="metodo" class="contenido-general metodo" aria-labelledby="metodo-titulo"><p class="sobretitulo">03 / MÉTODO</p><h2 id="metodo-titulo">Del dato al resultado</h2><div id="pasos-metodo" class="pasos"></div></section>
+    <section class="contenido-general fuentes" aria-labelledby="fuentes-titulo"><p class="sobretitulo">04 / CONTEXTO</p><h2 id="fuentes-titulo">Fuentes y límites</h2><div class="fuentes-grid"><div><h3>Fuentes</h3><div id="fuentes-lista"></div></div><div><h3>Limitaciones generales</h3><ul id="limitaciones-generales"></ul></div></div></section>
+  </main>
+  <footer class="pie-pagina"><p>Logotipos institucionales pendientes de autorización.<br>Referencias de los focos: atribución documental pendiente de revisión.<br><a href="./TERCEROS.md">Créditos y pendientes de autorización</a></p><div id="credito"></div><div id="version"></div></footer>
+  <div id="error-carga" class="error-carga" role="alert" hidden></div>
+</body>
+</html>

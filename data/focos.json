@@ -1,0 +1,1476 @@
+{
+ "esquema": "1.0.0",
+ "proyecto": {
+  "titulo": "Flujo de calor sensible superficial como indicador de eventos de surgencia costera",
+  "subtitulo": "Ocho focos de afloramiento frente a Chile, 23° S – 40° S",
+  "autor": "Vicente Jara Juleff",
+  "institucion": "Tesis de Biología Marina · Laboratorio de Oceanografía Física · Universidad Austral de Chile",
+  "resumen": "La surgencia costera lleva agua fría a la superficie y sostiene la productividad del sistema de Humboldt. Esta tesis examina si esa superficie más fría se asocia con un cambio en el flujo de calor sensible entre el océano y la atmósfera (SSHF). Para ocho focos de afloramiento descritos en la literatura se comparó el SSHF de los días de evento de surgencia con el del resto de los días, entre junio de 2002 y diciembre de 2025, usando temperatura superficial del mar satelital y el reanálisis ERA5.",
+  "metodo": [
+   {
+    "paso": 1,
+    "titulo": "Núcleo del foco",
+    "texto": "En cada foco se ubica el mínimo de desviación estándar de la temperatura superficial del mar junto al cabo y se definen tres cajas: núcleo costero, referencia oceánica a 200 km de la costa y caja de viento."
+   },
+   {
+    "paso": 2,
+    "titulo": "Dos índices diarios",
+    "texto": "UI: transporte de Ekman hacia mar afuera calculado con el viento de ERA5. CUISST: diferencia entre la temperatura del mar en la referencia oceánica y en el núcleo costero (MUR)."
+   },
+   {
+    "paso": 3,
+    "titulo": "Día de evento",
+    "texto": "Un día es de evento cuando los dos índices superan su umbral el mismo día y cada uno lo hace durante al menos dos días seguidos. El umbral del CUISST es mensual (media más una desviación estándar del mes)."
+   },
+   {
+    "paso": 4,
+    "titulo": "Contraste e incertidumbre",
+    "texto": "Se compara la anomalía de SSHF (sin su ciclo estacional) entre días de evento y el resto. El intervalo de confianza remuestrea años completos y la significancia se corrige por las ocho comparaciones con el método de Holm."
+   }
+  ],
+  "fuentes": [
+   {
+    "nombre": "ERA5",
+    "detalle": "Viento a 10 m, flujo de calor sensible superficial y temperatura del aire a 2 m, 0,25°. Hersbach et al. (2020).",
+    "doi": "10.1002/qj.3803"
+   },
+   {
+    "nombre": "MUR SST v4.1",
+    "detalle": "Temperatura superficial del mar diaria, 0,01°. JPL / PO.DAAC.",
+    "doi": null
+   }
+  ],
+  "limitaciones": [
+   "Los resultados describen una asociación entre días de evento y SSHF; no demuestran causalidad.",
+   "El índice térmico y el SSHF comparten información de la temperatura del mar, por lo que no son una validación independiente uno del otro.",
+   "El SSHF proviene de un reanálisis de 0,25° que usa su propia temperatura del mar; no resuelve la franja costera con el detalle de la TSM satelital.",
+   "Con 24 años como bloques de remuestreo, la inferencia es aproximada. El 14 % de los eventos conjuntos dura un solo día.",
+   "Los días sin dato satelital o de viento (155 por foco, casi todos de enero a mayo de 2002) no se pueden clasificar y se excluyen."
+  ],
+  "unidades": {
+   "sshf": {
+    "nombre": "Flujo de calor sensible superficial",
+    "unidad": "W m⁻²",
+    "convencion": "positivo: el océano gana calor; negativo: lo pierde"
+   },
+   "sshf_anom": {
+    "nombre": "Anomalía de SSHF",
+    "unidad": "W m⁻²",
+    "convencion": "respecto del ciclo estacional diario del foco"
+   },
+   "ui": {
+    "nombre": "Índice de surgencia (transporte de Ekman)",
+    "unidad": "m³ s⁻¹ km⁻¹",
+    "convencion": "positivo: transporte hacia mar afuera, favorable a la surgencia"
+   },
+   "cuisst": {
+    "nombre": "Índice térmico de surgencia",
+    "unidad": "°C",
+    "convencion": "TSM oceánica − TSM costera; positivo: costa más fría"
+   },
+   "sst_costera": {
+    "nombre": "Temperatura superficial del mar costera",
+    "unidad": "°C",
+    "convencion": "media del núcleo costero"
+   },
+   "t2": {
+    "nombre": "Temperatura del aire a 2 m",
+    "unidad": "°C",
+    "convencion": "ERA5"
+   },
+   "dT": {
+    "nombre": "Contraste térmico aire–mar",
+    "unidad": "°C",
+    "convencion": "T aire − TSM costera; positivo: aire más cálido que el mar"
+   },
+   "frec_evento": {
+    "nombre": "Frecuencia de días de evento",
+    "unidad": "fracción",
+    "convencion": "días de evento / días evaluables"
+   }
+  },
+  "periodo": {
+   "inicio": "2002-06-01",
+   "fin": "2025-12-31",
+   "dias_evaluables": 8611
+  },
+  "figuras": [
+   {
+    "archivo": "figuras/general/figura_resumen_doca_v2.webp",
+    "titulo": "Diferencia de SSHF en los ocho focos",
+    "pie": "a) Diferencia de anomalía de SSHF entre días de evento conjunto y el resto. Barras: intervalo de confianza del 95 % individual, por remuestreo de años completos, sin ajuste por comparaciones múltiples. Relleno: p < 0,05 tras el ajuste de Holm. b) SSHF medio en cada grupo.",
+    "estado": "validado",
+    "ancho": 1600,
+    "alto": 1136
+   },
+   {
+    "archivo": "figuras/general/poster_fig1_mapa.webp",
+    "titulo": "Focos de afloramiento estudiados",
+    "pie": "Ubicación de los ocho focos y diferencia de anomalía de SSHF (evento − resto). Círculo grande: evidencia tras el ajuste de Holm.",
+    "estado": "validado",
+    "ancho": 865,
+    "alto": 2074
+   },
+   {
+    "archivo": "figuras/general/poster_fig2_metodo.webp",
+    "titulo": "Geometría de muestreo",
+    "pie": "Desviación estándar de la TSM en tres de los ocho focos (escala propia en cada panel). 1: núcleo costero; 2: referencia oceánica a 200 km; 3: caja de viento.",
+    "estado": "descriptivo",
+    "ancho": 1600,
+    "alto": 448
+   },
+   {
+    "archivo": "figuras/general/poster_fig4_estacional.webp",
+    "titulo": "Ciclo estacional del índice térmico y del SSHF",
+    "pie": "Medias climatológicas de los ocho focos. El flujo es negativo (el océano pierde calor) la mayor parte del año en seis de ellos.",
+    "estado": "descriptivo",
+    "ancho": 1600,
+    "alto": 791
+   }
+  ],
+  "resultado_general": {
+   "estado": "validado",
+   "focos_con_evidencia": 4,
+   "focos_total": 8,
+   "rango_dif": [
+    1.5751,
+    2.7515
+   ],
+   "texto": "En 4 de 8 focos (Angamos, Lengua de Vaca, Curaumilla y Nugurne) la anomalía de SSHF es mayor durante los días de evento de surgencia, entre +1,6 y +2,8 W m⁻², con evidencia que se mantiene tras el ajuste de Holm. En la mayoría de ellos eso corresponde a una menor pérdida de calor sensible del océano, no a una ganancia. No se detectaron diferencias entre los agregados de las tres zonas."
+  }
+ },
+ "focos": [
+  {
+   "id": "pta_angamos",
+   "nombre": "Punta Angamos",
+   "nombre_corto": "P. Angamos",
+   "zona": "norte",
+   "zona_nombre": "Norte",
+   "lat": -22.6,
+   "lon": -70.36,
+   "cajas": {
+    "nucleo": [
+     -70.485,
+     -70.235,
+     -22.85,
+     -22.35
+    ],
+    "oceanica": [
+     -72.4371,
+     -72.1871,
+     -22.85,
+     -22.35
+    ],
+    "viento": [
+     -71.11,
+     -70.36,
+     -23.395,
+     -22.645
+    ]
+   },
+   "referencia": "Rodríguez et al. 1991, Sci. Mar. 55(3):467-473",
+   "umbrales": {
+    "ui": 476.5,
+    "cuisst_mensual": [
+     3.36,
+     4.29,
+     4.63,
+     4.37,
+     3.35,
+     2.54,
+     1.84,
+     1.43,
+     1.43,
+     1.52,
+     1.82,
+     2.56
+    ]
+   },
+   "eventos": {
+    "dias_evento": 1125,
+    "dias_resto": 7486,
+    "rachas": 313,
+    "duracion_media_dias": 3.59,
+    "frac_un_dia": 0.099
+   },
+   "indices": {
+    "estado": "descriptivo",
+    "todos": {
+     "ui": 882.0,
+     "cuisst": 1.63,
+     "sshf": -9.61,
+     "dT": -0.72
+    },
+    "evento": {
+     "ui": 1137.0,
+     "cuisst": 3.33,
+     "sshf": -7.48,
+     "dT": 0.34
+    }
+   },
+   "sshf_anual": {
+    "estado": "validado",
+    "dif": 2.2638,
+    "ic95": [
+     1.8168,
+     2.7151
+    ],
+    "p": 1.4573e-09,
+    "p_holm": 1.16584e-08,
+    "significativo_holm": true,
+    "crudo_evento": -7.4765,
+    "crudo_resto": -9.9273,
+    "categoria": "evidencia",
+    "etiqueta": "Con evidencia tras el ajuste de Holm"
+   },
+   "estacional": {
+    "estado": "exploratorio",
+    "nota": "Análisis exploratorio. La separación por estaciones se hizo después de conocer el resultado anual, así que estos contrastes no son una confirmación independiente. El ajuste de Holm considera las 32 pruebas (8 focos × 4 estaciones), pero no corrige esa elección posterior. Cada contraste compara los días de evento con el resto de los días de la misma estación.",
+    "estaciones": [
+     {
+      "est": "DJF",
+      "nombre": "Verano (dic–feb)",
+      "dias_evento": 290,
+      "dif": 2.73,
+      "ic95": [
+       1.56,
+       3.88
+      ],
+      "p": 0.000148,
+      "p_holm32": 0.0034,
+      "supera_holm32": true
+     },
+     {
+      "est": "MAM",
+      "nombre": "Otoño (mar–may)",
+      "dias_evento": 301,
+      "dif": 2.82,
+      "ic95": [
+       1.97,
+       3.61
+      ],
+      "p": 6.27e-07,
+      "p_holm32": 1.88e-05,
+      "supera_holm32": true
+     },
+     {
+      "est": "JJA",
+      "nombre": "Invierno (jun–ago)",
+      "dias_evento": 271,
+      "dif": 1.85,
+      "ic95": [
+       1.1,
+       2.57
+      ],
+      "p": 5.49e-05,
+      "p_holm32": 0.00137,
+      "supera_holm32": true
+     },
+     {
+      "est": "SON",
+      "nombre": "Primavera (sep–nov)",
+      "dias_evento": 263,
+      "dif": 1.58,
+      "ic95": [
+       0.86,
+       2.42
+      ],
+      "p": 0.000709,
+      "p_holm32": 0.0121,
+      "supera_holm32": true
+     }
+    ]
+   },
+   "serie": "series/pta_angamos.json",
+   "resumen": "Punta Angamos (22,6° S) pertenece a la zona norte del área de estudio. Se identificaron 1125 días de evento conjunto (13,1 % de los días evaluables), en 313 rachas de 3,6 días de duración media. En esos días la anomalía de SSHF fue 2,26 W m⁻² mayor que en el resto (IC 95 %: +1,82 a +2,72), y la diferencia se mantiene tras el ajuste de Holm. El flujo medio es negativo en ambos grupos (−7,5 y −9,9 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "limitaciones": [
+    "El viento favorable a la surgencia es casi permanente en esta zona, por lo que los días de evento se distinguen del resto sobre todo por el contraste térmico.",
+    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+   ],
+   "figuras": [
+    {
+     "archivo": "figuras/pta_angamos/mapa_std_tsm.webp",
+     "titulo": "Desviación estándar de la TSM — Punta Angamos",
+     "pie": "Variabilidad de la temperatura superficial del mar, junio de 2002 a diciembre de 2025, y las tres cajas de muestreo. 1: núcleo costero; 2: referencia oceánica; 3: caja de viento; estrella: mínimo de desviación estándar. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1128,
+     "alto": 898
+    },
+    {
+     "archivo": "figuras/pta_angamos/mapa_tsm_media.webp",
+     "titulo": "TSM media — Punta Angamos",
+     "pie": "Temperatura superficial del mar media, junio de 2002 a diciembre de 2025, con las mismas tres cajas. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1128,
+     "alto": 898
+    }
+   ]
+  },
+  {
+   "id": "bahia_antofagasta",
+   "nombre": "Bahía de Antofagasta",
+   "nombre_corto": "B. Antofagasta",
+   "zona": "norte",
+   "zona_nombre": "Norte",
+   "lat": -23.72,
+   "lon": -70.56,
+   "cajas": {
+    "nucleo": [
+     -70.685,
+     -70.435,
+     -23.97,
+     -23.47
+    ],
+    "oceanica": [
+     -72.6471,
+     -72.3971,
+     -23.97,
+     -23.47
+    ],
+    "viento": [
+     -71.19,
+     -70.44,
+     -24.075,
+     -23.325
+    ]
+   },
+   "referencia": "Piñones et al. 2007, doi:10.7773/cm.v33i1.1226",
+   "umbrales": {
+    "ui": 476.5,
+    "cuisst_mensual": [
+     2.66,
+     3.33,
+     3.86,
+     3.74,
+     3.25,
+     2.62,
+     2.38,
+     1.82,
+     1.49,
+     1.29,
+     1.38,
+     2.0
+    ]
+   },
+   "eventos": {
+    "dias_evento": 1092,
+    "dias_resto": 7519,
+    "rachas": 295,
+    "duracion_media_dias": 3.7,
+    "frac_un_dia": 0.132
+   },
+   "indices": {
+    "estado": "descriptivo",
+    "todos": {
+     "ui": 958.0,
+     "cuisst": 1.49,
+     "sshf": -10.89,
+     "dT": -0.78
+    },
+    "evento": {
+     "ui": 1271.0,
+     "cuisst": 3.05,
+     "sshf": -10.06,
+     "dT": 0.12
+    }
+   },
+   "sshf_anual": {
+    "estado": "validado",
+    "dif": 0.8697,
+    "ic95": [
+     0.226,
+     1.5122
+    ],
+    "p": 0.0154063,
+    "p_holm": 0.0616252,
+    "significativo_holm": false,
+    "crudo_evento": -10.0571,
+    "crudo_resto": -11.0072,
+    "categoria": "positivo_sin_ajuste",
+    "etiqueta": "Positivo, no supera el ajuste"
+   },
+   "estacional": {
+    "estado": "exploratorio",
+    "nota": "Análisis exploratorio. La separación por estaciones se hizo después de conocer el resultado anual, así que estos contrastes no son una confirmación independiente. El ajuste de Holm considera las 32 pruebas (8 focos × 4 estaciones), pero no corrige esa elección posterior. Cada contraste compara los días de evento con el resto de los días de la misma estación.",
+    "estaciones": [
+     {
+      "est": "DJF",
+      "nombre": "Verano (dic–feb)",
+      "dias_evento": 287,
+      "dif": 1.44,
+      "ic95": [
+       0.39,
+       2.74
+      ],
+      "p": 0.0251,
+      "p_holm32": 0.276,
+      "supera_holm32": false
+     },
+     {
+      "est": "MAM",
+      "nombre": "Otoño (mar–may)",
+      "dias_evento": 283,
+      "dif": 1.77,
+      "ic95": [
+       0.15,
+       3.0
+      ],
+      "p": 0.0212,
+      "p_holm32": 0.255,
+      "supera_holm32": false
+     },
+     {
+      "est": "JJA",
+      "nombre": "Invierno (jun–ago)",
+      "dias_evento": 254,
+      "dif": 0.23,
+      "ic95": [
+       -1.12,
+       1.76
+      ],
+      "p": 0.757,
+      "p_holm32": 1.0,
+      "supera_holm32": false
+     },
+     {
+      "est": "SON",
+      "nombre": "Primavera (sep–nov)",
+      "dias_evento": 268,
+      "dif": -0.06,
+      "ic95": [
+       -0.85,
+       0.6
+      ],
+      "p": 0.872,
+      "p_holm32": 1.0,
+      "supera_holm32": false
+     }
+    ]
+   },
+   "serie": "series/bahia_antofagasta.json",
+   "resumen": "Bahía de Antofagasta (23,7° S) pertenece a la zona norte del área de estudio. Se identificaron 1092 días de evento conjunto (12,7 % de los días evaluables), en 295 rachas de 3,7 días de duración media. La diferencia estimada de anomalía de SSHF es positiva (+0,87 W m⁻²; IC 95 %: +0,23 a +1,51), pero no supera el ajuste por comparaciones múltiples. El flujo medio es negativo en ambos grupos (−10,1 y −11,0 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "limitaciones": [
+    "El intervalo individual y la decisión ajustada responden a preguntas distintas: aquí el efecto estimado es positivo, pero la evidencia no alcanza tras corregir por ocho comparaciones.",
+    "El viento favorable a la surgencia es casi permanente en esta zona, por lo que los días de evento se distinguen del resto sobre todo por el contraste térmico.",
+    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+   ],
+   "figuras": [
+    {
+     "archivo": "figuras/bahia_antofagasta/mapa_std_tsm.webp",
+     "titulo": "Desviación estándar de la TSM — Bahía de Antofagasta",
+     "pie": "Variabilidad de la temperatura superficial del mar, junio de 2002 a diciembre de 2025, y las tres cajas de muestreo. 1: núcleo costero; 2: referencia oceánica; 3: caja de viento; estrella: mínimo de desviación estándar. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1110,
+     "alto": 784
+    },
+    {
+     "archivo": "figuras/bahia_antofagasta/mapa_tsm_media.webp",
+     "titulo": "TSM media — Bahía de Antofagasta",
+     "pie": "Temperatura superficial del mar media, junio de 2002 a diciembre de 2025, con las mismas tres cajas. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1106,
+     "alto": 784
+    }
+   ]
+  },
+  {
+   "id": "pta_lengua_vaca",
+   "nombre": "Punta Lengua de Vaca",
+   "nombre_corto": "P. Lengua de Vaca",
+   "zona": "central",
+   "zona_nombre": "Central",
+   "lat": -30.08,
+   "lon": -71.48,
+   "cajas": {
+    "nucleo": [
+     -71.605,
+     -71.355,
+     -30.33,
+     -29.83
+    ],
+    "oceanica": [
+     -73.6796,
+     -73.4296,
+     -30.33,
+     -29.83
+    ],
+    "viento": [
+     -72.19,
+     -71.44,
+     -30.375,
+     -29.625
+    ]
+   },
+   "referencia": "Moraga et al. 2001, doi:10.4067/S0717-71782001000100006",
+   "umbrales": {
+    "ui": 544.3,
+    "cuisst_mensual": [
+     2.45,
+     2.68,
+     3.49,
+     3.88,
+     3.72,
+     3.44,
+     2.88,
+     2.27,
+     2.27,
+     2.3,
+     2.46,
+     2.68
+    ]
+   },
+   "eventos": {
+    "dias_evento": 936,
+    "dias_resto": 7675,
+    "rachas": 253,
+    "duracion_media_dias": 3.7,
+    "frac_un_dia": 0.15
+   },
+   "indices": {
+    "estado": "descriptivo",
+    "todos": {
+     "ui": 878.0,
+     "cuisst": 2.11,
+     "sshf": -17.92,
+     "dT": 0.14
+    },
+    "evento": {
+     "ui": 1404.0,
+     "cuisst": 3.3,
+     "sshf": -16.24,
+     "dT": 0.88
+    }
+   },
+   "sshf_anual": {
+    "estado": "validado",
+    "dif": 2.0209,
+    "ic95": [
+     1.4923,
+     2.5424
+    ],
+    "p": 1.45355e-07,
+    "p_holm": 1.01748e-06,
+    "significativo_holm": true,
+    "crudo_evento": -16.2407,
+    "crudo_resto": -18.1277,
+    "categoria": "evidencia",
+    "etiqueta": "Con evidencia tras el ajuste de Holm"
+   },
+   "estacional": {
+    "estado": "exploratorio",
+    "nota": "Análisis exploratorio. La separación por estaciones se hizo después de conocer el resultado anual, así que estos contrastes no son una confirmación independiente. El ajuste de Holm considera las 32 pruebas (8 focos × 4 estaciones), pero no corrige esa elección posterior. Cada contraste compara los días de evento con el resto de los días de la misma estación.",
+    "estaciones": [
+     {
+      "est": "DJF",
+      "nombre": "Verano (dic–feb)",
+      "dias_evento": 210,
+      "dif": 1.79,
+      "ic95": [
+       0.91,
+       2.53
+      ],
+      "p": 0.000302,
+      "p_holm32": 0.00574,
+      "supera_holm32": true
+     },
+     {
+      "est": "MAM",
+      "nombre": "Otoño (mar–may)",
+      "dias_evento": 222,
+      "dif": 2.1,
+      "ic95": [
+       1.14,
+       2.91
+      ],
+      "p": 0.000134,
+      "p_holm32": 0.00322,
+      "supera_holm32": true
+     },
+     {
+      "est": "JJA",
+      "nombre": "Invierno (jun–ago)",
+      "dias_evento": 232,
+      "dif": 2.3,
+      "ic95": [
+       1.34,
+       3.4
+      ],
+      "p": 0.000148,
+      "p_holm32": 0.0034,
+      "supera_holm32": true
+     },
+     {
+      "est": "SON",
+      "nombre": "Primavera (sep–nov)",
+      "dias_evento": 272,
+      "dif": 1.91,
+      "ic95": [
+       0.72,
+       3.08
+      ],
+      "p": 0.00447,
+      "p_holm32": 0.067,
+      "supera_holm32": false
+     }
+    ]
+   },
+   "serie": "series/pta_lengua_vaca.json",
+   "resumen": "Punta Lengua de Vaca (30,1° S) pertenece a la zona central del área de estudio. Se identificaron 936 días de evento conjunto (10,9 % de los días evaluables), en 253 rachas de 3,7 días de duración media. En esos días la anomalía de SSHF fue 2,02 W m⁻² mayor que en el resto (IC 95 %: +1,49 a +2,54), y la diferencia se mantiene tras el ajuste de Holm. El flujo medio es negativo en ambos grupos (−16,2 y −18,1 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "limitaciones": [
+    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+   ],
+   "figuras": [
+    {
+     "archivo": "figuras/pta_lengua_vaca/mapa_std_tsm.webp",
+     "titulo": "Desviación estándar de la TSM — Punta Lengua de Vaca",
+     "pie": "Variabilidad de la temperatura superficial del mar, junio de 2002 a diciembre de 2025, y las tres cajas de muestreo. 1: núcleo costero; 2: referencia oceánica; 3: caja de viento; estrella: mínimo de desviación estándar. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1105,
+     "alto": 789
+    },
+    {
+     "archivo": "figuras/pta_lengua_vaca/mapa_tsm_media.webp",
+     "titulo": "TSM media — Punta Lengua de Vaca",
+     "pie": "Temperatura superficial del mar media, junio de 2002 a diciembre de 2025, con las mismas tres cajas. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1105,
+     "alto": 789
+    }
+   ]
+  },
+  {
+   "id": "pta_curaumilla",
+   "nombre": "Punta Curaumilla",
+   "nombre_corto": "P. Curaumilla",
+   "zona": "central",
+   "zona_nombre": "Central",
+   "lat": -32.96,
+   "lon": -71.6,
+   "cajas": {
+    "nucleo": [
+     -71.725,
+     -71.475,
+     -33.21,
+     -32.71
+    ],
+    "oceanica": [
+     -73.8672,
+     -73.6172,
+     -33.21,
+     -32.71
+    ],
+    "viento": [
+     -72.31,
+     -71.56,
+     -33.375,
+     -32.625
+    ]
+   },
+   "referencia": "Letelier et al. 2009, doi:10.1029/2008JC005171",
+   "umbrales": {
+    "ui": 544.3,
+    "cuisst_mensual": [
+     2.61,
+     2.94,
+     3.56,
+     4.13,
+     3.77,
+     3.11,
+     2.5,
+     2.23,
+     2.2,
+     2.37,
+     2.55,
+     2.55
+    ]
+   },
+   "eventos": {
+    "dias_evento": 943,
+    "dias_resto": 7668,
+    "rachas": 276,
+    "duracion_media_dias": 3.42,
+    "frac_un_dia": 0.138
+   },
+   "indices": {
+    "estado": "descriptivo",
+    "todos": {
+     "ui": 807.0,
+     "cuisst": 2.04,
+     "sshf": -3.76,
+     "dT": -0.3
+    },
+    "evento": {
+     "ui": 1494.0,
+     "cuisst": 3.35,
+     "sshf": -2.16,
+     "dT": 0.32
+    }
+   },
+   "sshf_anual": {
+    "estado": "validado",
+    "dif": 1.5751,
+    "ic95": [
+     0.7513,
+     2.4044
+    ],
+    "p": 0.00149011,
+    "p_holm": 0.00894066,
+    "significativo_holm": true,
+    "crudo_evento": -2.163,
+    "crudo_resto": -3.9593,
+    "categoria": "evidencia",
+    "etiqueta": "Con evidencia tras el ajuste de Holm"
+   },
+   "estacional": {
+    "estado": "exploratorio",
+    "nota": "Análisis exploratorio. La separación por estaciones se hizo después de conocer el resultado anual, así que estos contrastes no son una confirmación independiente. El ajuste de Holm considera las 32 pruebas (8 focos × 4 estaciones), pero no corrige esa elección posterior. Cada contraste compara los días de evento con el resto de los días de la misma estación.",
+    "estaciones": [
+     {
+      "est": "DJF",
+      "nombre": "Verano (dic–feb)",
+      "dias_evento": 240,
+      "dif": 3.98,
+      "ic95": [
+       2.71,
+       5.25
+      ],
+      "p": 2.88e-06,
+      "p_holm32": 7.78e-05,
+      "supera_holm32": true
+     },
+     {
+      "est": "MAM",
+      "nombre": "Otoño (mar–may)",
+      "dias_evento": 245,
+      "dif": 3.17,
+      "ic95": [
+       1.65,
+       5.09
+      ],
+      "p": 0.00158,
+      "p_holm32": 0.0253,
+      "supera_holm32": true
+     },
+     {
+      "est": "JJA",
+      "nombre": "Invierno (jun–ago)",
+      "dias_evento": 193,
+      "dif": -1.32,
+      "ic95": [
+       -3.07,
+       0.57
+      ],
+      "p": 0.162,
+      "p_holm32": 1.0,
+      "supera_holm32": false
+     },
+     {
+      "est": "SON",
+      "nombre": "Primavera (sep–nov)",
+      "dias_evento": 265,
+      "dif": 0.09,
+      "ic95": [
+       -1.58,
+       1.81
+      ],
+      "p": 0.917,
+      "p_holm32": 1.0,
+      "supera_holm32": false
+     }
+    ]
+   },
+   "serie": "series/pta_curaumilla.json",
+   "resumen": "Punta Curaumilla (33,0° S) pertenece a la zona central del área de estudio. Se identificaron 943 días de evento conjunto (11,0 % de los días evaluables), en 276 rachas de 3,4 días de duración media. En esos días la anomalía de SSHF fue 1,58 W m⁻² mayor que en el resto (IC 95 %: +0,75 a +2,40), y la diferencia se mantiene tras el ajuste de Holm. El flujo medio es negativo en ambos grupos (−2,2 y −4,0 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "limitaciones": [
+    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+   ],
+   "figuras": [
+    {
+     "archivo": "figuras/pta_curaumilla/mapa_std_tsm.webp",
+     "titulo": "Desviación estándar de la TSM — Punta Curaumilla",
+     "pie": "Variabilidad de la temperatura superficial del mar, junio de 2002 a diciembre de 2025, y las tres cajas de muestreo. 1: núcleo costero; 2: referencia oceánica; 3: caja de viento; estrella: mínimo de desviación estándar. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1113,
+     "alto": 794
+    },
+    {
+     "archivo": "figuras/pta_curaumilla/mapa_tsm_media.webp",
+     "titulo": "TSM media — Punta Curaumilla",
+     "pie": "Temperatura superficial del mar media, junio de 2002 a diciembre de 2025, con las mismas tres cajas. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1105,
+     "alto": 794
+    }
+   ]
+  },
+  {
+   "id": "pta_topocalma",
+   "nombre": "Punta Topocalma",
+   "nombre_corto": "P. Topocalma",
+   "zona": "central",
+   "zona_nombre": "Central",
+   "lat": -34.36,
+   "lon": -72.2,
+   "cajas": {
+    "nucleo": [
+     -72.325,
+     -72.075,
+     -34.61,
+     -34.11
+    ],
+    "oceanica": [
+     -74.4965,
+     -74.2465,
+     -34.61,
+     -34.11
+    ],
+    "viento": [
+     -72.79,
+     -72.04,
+     -34.545,
+     -33.795
+    ]
+   },
+   "referencia": "Letelier et al. 2009, doi:10.1029/2008JC005171",
+   "umbrales": {
+    "ui": 544.3,
+    "cuisst_mensual": [
+     3.15,
+     3.59,
+     3.79,
+     4.02,
+     3.27,
+     2.87,
+     2.38,
+     2.13,
+     1.95,
+     2.44,
+     2.83,
+     3.08
+    ]
+   },
+   "eventos": {
+    "dias_evento": 952,
+    "dias_resto": 7659,
+    "rachas": 257,
+    "duracion_media_dias": 3.7,
+    "frac_un_dia": 0.113
+   },
+   "indices": {
+    "estado": "descriptivo",
+    "todos": {
+     "ui": 789.0,
+     "cuisst": 2.07,
+     "sshf": -19.78,
+     "dT": -0.07
+    },
+    "evento": {
+     "ui": 1518.0,
+     "cuisst": 3.5,
+     "sshf": -22.08,
+     "dT": 0.8
+    }
+   },
+   "sshf_anual": {
+    "estado": "validado",
+    "dif": 0.0292,
+    "ic95": [
+     -1.1412,
+     1.1984
+    ],
+    "p": 0.962017,
+    "p_holm": 1.0,
+    "significativo_holm": false,
+    "crudo_evento": -22.0777,
+    "crudo_resto": -19.4953,
+    "categoria": "sin_diferencia",
+    "etiqueta": "No se detectó diferencia"
+   },
+   "estacional": {
+    "estado": "exploratorio",
+    "nota": "Análisis exploratorio. La separación por estaciones se hizo después de conocer el resultado anual, así que estos contrastes no son una confirmación independiente. El ajuste de Holm considera las 32 pruebas (8 focos × 4 estaciones), pero no corrige esa elección posterior. Cada contraste compara los días de evento con el resto de los días de la misma estación.",
+    "estaciones": [
+     {
+      "est": "DJF",
+      "nombre": "Verano (dic–feb)",
+      "dias_evento": 285,
+      "dif": 3.9,
+      "ic95": [
+       2.86,
+       4.92
+      ],
+      "p": 1.59e-07,
+      "p_holm32": 5.09e-06,
+      "supera_holm32": true
+     },
+     {
+      "est": "MAM",
+      "nombre": "Otoño (mar–may)",
+      "dias_evento": 215,
+      "dif": 1.16,
+      "ic95": [
+       -0.88,
+       2.97
+      ],
+      "p": 0.256,
+      "p_holm32": 1.0,
+      "supera_holm32": false
+     },
+     {
+      "est": "JJA",
+      "nombre": "Invierno (jun–ago)",
+      "dias_evento": 174,
+      "dif": -5.18,
+      "ic95": [
+       -8.15,
+       -2.91
+      ],
+      "p": 0.000407,
+      "p_holm32": 0.00733,
+      "supera_holm32": true
+     },
+     {
+      "est": "SON",
+      "nombre": "Primavera (sep–nov)",
+      "dias_evento": 278,
+      "dif": -1.35,
+      "ic95": [
+       -3.54,
+       0.56
+      ],
+      "p": 0.218,
+      "p_holm32": 1.0,
+      "supera_holm32": false
+     }
+    ]
+   },
+   "serie": "series/pta_topocalma.json",
+   "resumen": "Punta Topocalma (34,4° S) pertenece a la zona central del área de estudio. Se identificaron 952 días de evento conjunto (11,1 % de los días evaluables), en 257 rachas de 3,7 días de duración media. No se detectó diferencia en la anomalía de SSHF entre los días de evento y el resto (+0,03 W m⁻²; IC 95 %: −1,14 a +1,20). El flujo medio es negativo en ambos grupos (−22,1 y −19,5 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "limitaciones": [
+    "Que no se detecte una diferencia anual no demuestra que el SSHF no responda: el contraste por estaciones (exploratorio) sugiere respuestas de signo distinto en verano e invierno.",
+    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+   ],
+   "figuras": [
+    {
+     "archivo": "figuras/pta_topocalma/mapa_std_tsm.webp",
+     "titulo": "Desviación estándar de la TSM — Punta Topocalma",
+     "pie": "Variabilidad de la temperatura superficial del mar, junio de 2002 a diciembre de 2025, y las tres cajas de muestreo. 1: núcleo costero; 2: referencia oceánica; 3: caja de viento; estrella: mínimo de desviación estándar. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1105,
+     "alto": 814
+    },
+    {
+     "archivo": "figuras/pta_topocalma/mapa_tsm_media.webp",
+     "titulo": "TSM media — Punta Topocalma",
+     "pie": "Temperatura superficial del mar media, junio de 2002 a diciembre de 2025, con las mismas tres cajas. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1105,
+     "alto": 814
+    }
+   ]
+  },
+  {
+   "id": "pta_nugurne",
+   "nombre": "Punta Nugurne",
+   "nombre_corto": "P. Nugurne",
+   "zona": "centrosur",
+   "zona_nombre": "Centro-sur",
+   "lat": -35.84,
+   "lon": -72.92,
+   "cajas": {
+    "nucleo": [
+     -73.045,
+     -72.795,
+     -36.09,
+     -35.59
+    ],
+    "oceanica": [
+     -75.2643,
+     -75.0143,
+     -36.09,
+     -35.59
+    ],
+    "viento": [
+     -73.55,
+     -72.8,
+     -36.325,
+     -35.575
+    ]
+   },
+   "referencia": "Letelier et al. 2009, doi:10.1029/2008JC005171",
+   "umbrales": {
+    "ui": 540.5,
+    "cuisst_mensual": [
+     4.09,
+     4.69,
+     4.86,
+     4.55,
+     3.77,
+     3.03,
+     2.09,
+     1.78,
+     1.82,
+     2.23,
+     2.97,
+     3.69
+    ]
+   },
+   "eventos": {
+    "dias_evento": 776,
+    "dias_resto": 7835,
+    "rachas": 225,
+    "duracion_media_dias": 3.45,
+    "frac_un_dia": 0.164
+   },
+   "indices": {
+    "estado": "descriptivo",
+    "todos": {
+     "ui": 630.0,
+     "cuisst": 2.4,
+     "sshf": -0.58,
+     "dT": -0.27
+    },
+    "evento": {
+     "ui": 1418.0,
+     "cuisst": 3.95,
+     "sshf": 3.61,
+     "dT": 0.5
+    }
+   },
+   "sshf_anual": {
+    "estado": "validado",
+    "dif": 2.7515,
+    "ic95": [
+     1.1098,
+     4.1274
+    ],
+    "p": 0.00220476,
+    "p_holm": 0.0110238,
+    "significativo_holm": true,
+    "crudo_evento": 3.6116,
+    "crudo_resto": -1.0004,
+    "categoria": "evidencia",
+    "etiqueta": "Con evidencia tras el ajuste de Holm"
+   },
+   "estacional": {
+    "estado": "exploratorio",
+    "nota": "Análisis exploratorio. La separación por estaciones se hizo después de conocer el resultado anual, así que estos contrastes no son una confirmación independiente. El ajuste de Holm considera las 32 pruebas (8 focos × 4 estaciones), pero no corrige esa elección posterior. Cada contraste compara los días de evento con el resto de los días de la misma estación.",
+    "estaciones": [
+     {
+      "est": "DJF",
+      "nombre": "Verano (dic–feb)",
+      "dias_evento": 263,
+      "dif": 6.97,
+      "ic95": [
+       5.18,
+       9.08
+      ],
+      "p": 6.8e-07,
+      "p_holm32": 1.97e-05,
+      "supera_holm32": true
+     },
+     {
+      "est": "MAM",
+      "nombre": "Otoño (mar–may)",
+      "dias_evento": 170,
+      "dif": 3.57,
+      "ic95": [
+       2.02,
+       5.12
+      ],
+      "p": 0.000201,
+      "p_holm32": 0.00422,
+      "supera_holm32": true
+     },
+     {
+      "est": "JJA",
+      "nombre": "Invierno (jun–ago)",
+      "dias_evento": 116,
+      "dif": -5.83,
+      "ic95": [
+       -9.85,
+       -1.22
+      ],
+      "p": 0.0183,
+      "p_holm32": 0.255,
+      "supera_holm32": false
+     },
+     {
+      "est": "SON",
+      "nombre": "Primavera (sep–nov)",
+      "dias_evento": 227,
+      "dif": 2.08,
+      "ic95": [
+       0.42,
+       3.54
+      ],
+      "p": 0.0182,
+      "p_holm32": 0.255,
+      "supera_holm32": false
+     }
+    ]
+   },
+   "serie": "series/pta_nugurne.json",
+   "resumen": "Punta Nugurne (35,8° S) pertenece a la zona centro-sur del área de estudio. Se identificaron 776 días de evento conjunto (9,0 % de los días evaluables), en 225 rachas de 3,5 días de duración media. En esos días la anomalía de SSHF fue 2,75 W m⁻² mayor que en el resto (IC 95 %: +1,11 a +4,13), y la diferencia se mantiene tras el ajuste de Holm. Es el único foco donde el flujo medio cambia de signo: −1,0 W m⁻² en el resto de los días y +3,6 W m⁻² durante los eventos.",
+   "limitaciones": [
+    "La variabilidad diaria del SSHF en esta zona es aproximadamente el doble que en el norte, y los intervalos son más anchos.",
+    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+   ],
+   "figuras": [
+    {
+     "archivo": "figuras/pta_nugurne/mapa_std_tsm.webp",
+     "titulo": "Desviación estándar de la TSM — Punta Nugurne",
+     "pie": "Variabilidad de la temperatura superficial del mar, junio de 2002 a diciembre de 2025, y las tres cajas de muestreo. 1: núcleo costero; 2: referencia oceánica; 3: caja de viento; estrella: mínimo de desviación estándar. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1105,
+     "alto": 798
+    },
+    {
+     "archivo": "figuras/pta_nugurne/mapa_tsm_media.webp",
+     "titulo": "TSM media — Punta Nugurne",
+     "pie": "Temperatura superficial del mar media, junio de 2002 a diciembre de 2025, con las mismas tres cajas. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1105,
+     "alto": 798
+    }
+   ]
+  },
+  {
+   "id": "pta_lavapie",
+   "nombre": "Punta Lavapié",
+   "nombre_corto": "P. Lavapié",
+   "zona": "centrosur",
+   "zona_nombre": "Centro-sur",
+   "lat": -36.56,
+   "lon": -73.32,
+   "cajas": {
+    "nucleo": [
+     -73.445,
+     -73.195,
+     -36.81,
+     -36.31
+    ],
+    "oceanica": [
+     -75.7021,
+     -75.4521,
+     -36.81,
+     -36.31
+    ],
+    "viento": [
+     -74.19,
+     -73.44,
+     -37.625,
+     -36.875
+    ]
+   },
+   "referencia": "Letelier et al. 2009, doi:10.1029/2008JC005171",
+   "umbrales": {
+    "ui": 540.5,
+    "cuisst_mensual": [
+     4.45,
+     5.05,
+     4.88,
+     4.4,
+     3.97,
+     3.02,
+     2.3,
+     1.92,
+     1.58,
+     2.12,
+     2.99,
+     3.78
+    ]
+   },
+   "eventos": {
+    "dias_evento": 728,
+    "dias_resto": 7883,
+    "rachas": 220,
+    "duracion_media_dias": 3.31,
+    "frac_un_dia": 0.136
+   },
+   "indices": {
+    "estado": "descriptivo",
+    "todos": {
+     "ui": 741.0,
+     "cuisst": 2.55,
+     "sshf": -8.49,
+     "dT": 0.09
+    },
+    "evento": {
+     "ui": 1809.0,
+     "cuisst": 4.07,
+     "sshf": -9.14,
+     "dT": 0.96
+    }
+   },
+   "sshf_anual": {
+    "estado": "validado",
+    "dif": 1.4151,
+    "ic95": [
+     -0.1608,
+     2.868
+    ],
+    "p": 0.0870785,
+    "p_holm": 0.261235,
+    "significativo_holm": false,
+    "crudo_evento": -9.1377,
+    "crudo_resto": -8.4328,
+    "categoria": "positivo_sin_ajuste",
+    "etiqueta": "Positivo, no supera el ajuste"
+   },
+   "estacional": {
+    "estado": "exploratorio",
+    "nota": "Análisis exploratorio. La separación por estaciones se hizo después de conocer el resultado anual, así que estos contrastes no son una confirmación independiente. El ajuste de Holm considera las 32 pruebas (8 focos × 4 estaciones), pero no corrige esa elección posterior. Cada contraste compara los días de evento con el resto de los días de la misma estación.",
+    "estaciones": [
+     {
+      "est": "DJF",
+      "nombre": "Verano (dic–feb)",
+      "dias_evento": 272,
+      "dif": 6.09,
+      "ic95": [
+       4.15,
+       7.93
+      ],
+      "p": 2.1e-06,
+      "p_holm32": 5.88e-05,
+      "supera_holm32": true
+     },
+     {
+      "est": "MAM",
+      "nombre": "Otoño (mar–may)",
+      "dias_evento": 148,
+      "dif": 1.38,
+      "ic95": [
+       -0.24,
+       3.32
+      ],
+      "p": 0.151,
+      "p_holm32": 1.0,
+      "supera_holm32": false
+     },
+     {
+      "est": "JJA",
+      "nombre": "Invierno (jun–ago)",
+      "dias_evento": 75,
+      "dif": -7.61,
+      "ic95": [
+       -9.32,
+       -4.91
+      ],
+      "p": 3.54e-07,
+      "p_holm32": 1.1e-05,
+      "supera_holm32": true
+     },
+     {
+      "est": "SON",
+      "nombre": "Primavera (sep–nov)",
+      "dias_evento": 233,
+      "dif": -0.63,
+      "ic95": [
+       -2.53,
+       1.26
+      ],
+      "p": 0.521,
+      "p_holm32": 1.0,
+      "supera_holm32": false
+     }
+    ]
+   },
+   "serie": "series/pta_lavapie.json",
+   "resumen": "Punta Lavapié (36,6° S) pertenece a la zona centro-sur del área de estudio. Se identificaron 728 días de evento conjunto (8,5 % de los días evaluables), en 220 rachas de 3,3 días de duración media. La diferencia estimada de anomalía de SSHF es positiva (+1,42 W m⁻²; IC 95 %: −0,16 a +2,87), pero no supera el ajuste por comparaciones múltiples. El flujo medio es negativo en ambos grupos (−9,1 y −8,4 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "limitaciones": [
+    "El intervalo individual y la decisión ajustada responden a preguntas distintas: aquí el efecto estimado es positivo, pero la evidencia no alcanza tras corregir por ocho comparaciones.",
+    "La variabilidad diaria del SSHF en esta zona es aproximadamente el doble que en el norte, y los intervalos son más anchos.",
+    "El contraste de invierno se apoya en solo 75 días de evento; su magnitud es imprecisa.",
+    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+   ],
+   "figuras": [
+    {
+     "archivo": "figuras/pta_lavapie/mapa_std_tsm.webp",
+     "titulo": "Desviación estándar de la TSM — Punta Lavapié",
+     "pie": "Variabilidad de la temperatura superficial del mar, junio de 2002 a diciembre de 2025, y las tres cajas de muestreo. 1: núcleo costero; 2: referencia oceánica; 3: caja de viento; estrella: mínimo de desviación estándar. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 977,
+     "alto": 921
+    },
+    {
+     "archivo": "figuras/pta_lavapie/mapa_tsm_media.webp",
+     "titulo": "TSM media — Punta Lavapié",
+     "pie": "Temperatura superficial del mar media, junio de 2002 a diciembre de 2025, con las mismas tres cajas. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 977,
+     "alto": 921
+    }
+   ]
+  },
+  {
+   "id": "pta_galera",
+   "nombre": "Punta Galera",
+   "nombre_corto": "P. Galera",
+   "zona": "centrosur",
+   "zona_nombre": "Centro-sur",
+   "lat": -39.4,
+   "lon": -73.56,
+   "cajas": {
+    "nucleo": [
+     -73.685,
+     -73.435,
+     -39.65,
+     -39.15
+    ],
+    "oceanica": [
+     -76.0303,
+     -75.7803,
+     -39.65,
+     -39.15
+    ],
+    "viento": [
+     -74.47,
+     -73.72,
+     -40.375,
+     -39.625
+    ]
+   },
+   "referencia": "Letelier et al. 2009, doi:10.1029/2008JC005171",
+   "umbrales": {
+    "ui": 540.5,
+    "cuisst_mensual": [
+     4.53,
+     5.48,
+     5.32,
+     4.64,
+     3.36,
+     2.59,
+     2.05,
+     1.52,
+     1.13,
+     1.42,
+     2.62,
+     3.69
+    ]
+   },
+   "eventos": {
+    "dias_evento": 501,
+    "dias_resto": 8110,
+    "rachas": 185,
+    "duracion_media_dias": 2.71,
+    "frac_un_dia": 0.227
+   },
+   "indices": {
+    "estado": "descriptivo",
+    "todos": {
+     "ui": 203.0,
+     "cuisst": 2.25,
+     "sshf": -2.81,
+     "dT": -0.17
+    },
+    "evento": {
+     "ui": 1140.0,
+     "cuisst": 4.2,
+     "sshf": -0.38,
+     "dT": 0.74
+    }
+   },
+   "sshf_anual": {
+    "estado": "validado",
+    "dif": 0.1927,
+    "ic95": [
+     -1.7869,
+     1.9137
+    ],
+    "p": 0.843164,
+    "p_holm": 1.0,
+    "significativo_holm": false,
+    "crudo_evento": -0.3758,
+    "crudo_resto": -2.9553,
+    "categoria": "sin_diferencia",
+    "etiqueta": "No se detectó diferencia"
+   },
+   "estacional": {
+    "estado": "exploratorio",
+    "nota": "Análisis exploratorio. La separación por estaciones se hizo después de conocer el resultado anual, así que estos contrastes no son una confirmación independiente. El ajuste de Holm considera las 32 pruebas (8 focos × 4 estaciones), pero no corrige esa elección posterior. Cada contraste compara los días de evento con el resto de los días de la misma estación.",
+    "estaciones": [
+     {
+      "est": "DJF",
+      "nombre": "Verano (dic–feb)",
+      "dias_evento": 206,
+      "dif": 4.33,
+      "ic95": [
+       2.42,
+       6.26
+      ],
+      "p": 0.000215,
+      "p_holm32": 0.0043,
+      "supera_holm32": true
+     },
+     {
+      "est": "MAM",
+      "nombre": "Otoño (mar–may)",
+      "dias_evento": 108,
+      "dif": 0.08,
+      "ic95": [
+       -3.59,
+       3.41
+      ],
+      "p": 0.965,
+      "p_holm32": 1.0,
+      "supera_holm32": false
+     },
+     {
+      "est": "JJA",
+      "nombre": "Invierno (jun–ago)",
+      "dias_evento": 38,
+      "dif": -17.07,
+      "ic95": [
+       -22.4,
+       -10.14
+      ],
+      "p": 1.05e-05,
+      "p_holm32": 0.000273,
+      "supera_holm32": true
+     },
+     {
+      "est": "SON",
+      "nombre": "Primavera (sep–nov)",
+      "dias_evento": 149,
+      "dif": -0.5,
+      "ic95": [
+       -2.72,
+       1.49
+      ],
+      "p": 0.65,
+      "p_holm32": 1.0,
+      "supera_holm32": false
+     }
+    ]
+   },
+   "serie": "series/pta_galera.json",
+   "resumen": "Punta Galera (39,4° S) pertenece a la zona centro-sur del área de estudio. Se identificaron 501 días de evento conjunto (5,8 % de los días evaluables), en 185 rachas de 2,7 días de duración media. No se detectó diferencia en la anomalía de SSHF entre los días de evento y el resto (+0,19 W m⁻²; IC 95 %: −1,79 a +1,91). El flujo medio es negativo en ambos grupos (−0,4 y −3,0 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "limitaciones": [
+    "Que no se detecte una diferencia anual no demuestra que el SSHF no responda: el contraste por estaciones (exploratorio) sugiere respuestas de signo distinto en verano e invierno.",
+    "Es el foco con menos días de evento (501), lo que reduce la precisión de todas sus estimaciones.",
+    "La variabilidad diaria del SSHF en esta zona es aproximadamente el doble que en el norte, y los intervalos son más anchos.",
+    "El contraste de invierno se apoya en solo 38 días de evento; su magnitud es imprecisa.",
+    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+   ],
+   "figuras": [
+    {
+     "archivo": "figuras/pta_galera/mapa_std_tsm.webp",
+     "titulo": "Desviación estándar de la TSM — Punta Galera",
+     "pie": "Variabilidad de la temperatura superficial del mar, junio de 2002 a diciembre de 2025, y las tres cajas de muestreo. 1: núcleo costero; 2: referencia oceánica; 3: caja de viento; estrella: mínimo de desviación estándar. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1001,
+     "alto": 921
+    },
+    {
+     "archivo": "figuras/pta_galera/mapa_tsm_media.webp",
+     "titulo": "TSM media — Punta Galera",
+     "pie": "Temperatura superficial del mar media, junio de 2002 a diciembre de 2025, con las mismas tres cajas. Escala de color propia de este foco.",
+     "estado": "descriptivo",
+     "ancho": 1001,
+     "alto": 921
+    }
+   ]
+  }
+ ]
+}

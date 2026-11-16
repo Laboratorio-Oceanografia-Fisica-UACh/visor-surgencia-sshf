@@ -1,0 +1,232 @@
+{
+  "version": 1,
+  "commit_fuente": "4cca0e3",
+  "fecha_importacion": "2026-11-16",
+  "paquete_original": {
+    "archivos_incluyendo_nojekyll": 36,
+    "bytes": 1180344
+  },
+  "nota": "Inventario de los archivos preparados, excluye este propio manifiesto y los materiales locales de revisi?n. Los JSON cient?ficos y las figuras se conservan byte a byte.",
+  "archivos": [
+    {
+      "archivo": ".gitattributes",
+      "bytes": 205,
+      "sha256": "cf24499cf3c0f58b6d8be784b7b65f32e7d316119a0732fb99816476efe58f39"
+    },
+    {
+      "archivo": ".gitignore",
+      "bytes": 326,
+      "sha256": "7514e7dcebc5e9de54cd79a43fc9160cc046e8e3dd6af72c39dca07a1e989231"
+    },
+    {
+      "archivo": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archivo": "css/estilo.css",
+      "bytes": 15426,
+      "sha256": "c5d6b4e89cdc43bd0ddbdd1d2feac255154105fc7f0d539f8a94d575b32db23c"
+    },
+    {
+      "archivo": "data/esquema/focos.schema.json",
+      "bytes": 7751,
+      "sha256": "a62c1208fafd8a9deb7c316616e11bdcd130d9dbd995aec23705f9de81422069"
+    },
+    {
+      "archivo": "data/esquema/serie.schema.json",
+      "bytes": 2545,
+      "sha256": "e490f0ddb1ad334194fd82261bc6eb5b8399a778f61aa3474a1752420bb4b0e5"
+    },
+    {
+      "archivo": "data/focos.json",
+      "bytes": 44926,
+      "sha256": "d943ed9879a0a9c6cd7d091df57ebe4b53db60556bc6dad16c6ce980e1e7dede"
+    },
+    {
+      "archivo": "data/series/bahia_antofagasta.json",
+      "bytes": 12342,
+      "sha256": "e5927787a7df63f7a911d55b825274cf868471756c4536e7e61b0a69df22ead3"
+    },
+    {
+      "archivo": "data/series/pta_angamos.json",
+      "bytes": 12240,
+      "sha256": "0d94607e87fddfd04f627740b264c34258fd3603a927541a24d3c1c364f31e99"
+    },
+    {
+      "archivo": "data/series/pta_curaumilla.json",
+      "bytes": 12090,
+      "sha256": "81c12c93db47c1f348052dac801260aba709e2043840982b1f5634469f916fcc"
+    },
+    {
+      "archivo": "data/series/pta_galera.json",
+      "bytes": 11975,
+      "sha256": "2345564cdd56af84a7865a39ecc60e214abaaeb6cc55c96f392286ba376be714"
+    },
+    {
+      "archivo": "data/series/pta_lavapie.json",
+      "bytes": 12269,
+      "sha256": "c68ad200c12f59d12ea1c9b0ba60fa417e8499bd18c8d9537ee4abc94c8b01fe"
+    },
+    {
+      "archivo": "data/series/pta_lengua_vaca.json",
+      "bytes": 12307,
+      "sha256": "09ea9406f6238a4a97c92ccac39af081231beee9c62a50b564d1c2362c248e81"
+    },
+    {
+      "archivo": "data/series/pta_nugurne.json",
+      "bytes": 11942,
+      "sha256": "a306199d7218366fc735661dce9d6649ad456b2899611129c3656ab94d82325c"
+    },
+    {
+      "archivo": "data/series/pta_topocalma.json",
+      "bytes": 12350,
+      "sha256": "ce35189c5d7c0990d5730b4ba9e6e78382fb57eb4e4e29824febb45f8fc38806"
+    },
+    {
+      "archivo": "data/version.json",
+      "bytes": 186,
+      "sha256": "773335103f01fd41f9fde1fb59eb31e3d724df351051f34ff4d3d02779a3ad79"
+    },
+    {
+      "archivo": "figuras/bahia_antofagasta/mapa_std_tsm.webp",
+      "bytes": 43226,
+      "sha256": "ea1eaa96a58564104bf195cbf388289f77d29f53fc32f01149b0bea1cf3b7f31"
+    },
+    {
+      "archivo": "figuras/bahia_antofagasta/mapa_tsm_media.webp",
+      "bytes": 41196,
+      "sha256": "c91601f93ea8d9ee2ab585333085bc1f90713ffc8081a2d0561ec9e8d01bf2b7"
+    },
+    {
+      "archivo": "figuras/general/figura_resumen_doca_v2.webp",
+      "bytes": 78818,
+      "sha256": "e529a4f93186d5350cca9d75894de4d8991afd871888f03a9389797a3b3bf507"
+    },
+    {
+      "archivo": "figuras/general/poster_fig1_mapa.webp",
+      "bytes": 74264,
+      "sha256": "72e510dfc7a0e393598028661c3f2e9420c15ad69c1819a336b3e4fac6fe60aa"
+    },
+    {
+      "archivo": "figuras/general/poster_fig2_metodo.webp",
+      "bytes": 59120,
+      "sha256": "f814e3e18987b80e22c98dc91180fcf7f5175721dbfa68a14ed5f71239ed19f4"
+    },
+    {
+      "archivo": "figuras/general/poster_fig4_estacional.webp",
+      "bytes": 118922,
+      "sha256": "7abeea4dc5b3c56e0c256869f7104f23ce2c4c763d37dd5d1299b8dd167d1051"
+    },
+    {
+      "archivo": "figuras/pta_angamos/mapa_std_tsm.webp",
+      "bytes": 46656,
+      "sha256": "f4806f17369dfbbae8d2ad0539e86ffa72bf34a66553f3e44e26c687f20de74c"
+    },
+    {
+      "archivo": "figuras/pta_angamos/mapa_tsm_media.webp",
+      "bytes": 44178,
+      "sha256": "c6c267727c9245a8fb4567b99b96c265ff6d1b9af5db0aa9a1d3beeef9bcfd84"
+    },
+    {
+      "archivo": "figuras/pta_curaumilla/mapa_std_tsm.webp",
+      "bytes": 48788,
+      "sha256": "3e95a755e6e2790e7f4340a36fce7a6c0aba949d0a50c087f6cd522158ac9c41"
+    },
+    {
+      "archivo": "figuras/pta_curaumilla/mapa_tsm_media.webp",
+      "bytes": 38862,
+      "sha256": "d24394f96e0f6140f12ef3e1afb7a388550ccc846b24e66c61c8b233433531d7"
+    },
+    {
+      "archivo": "figuras/pta_galera/mapa_std_tsm.webp",
+      "bytes": 39516,
+      "sha256": "6672e6c020139b58dd00e28c821fe25d7e7ecbfea212c228cc6cef5fa591d00b"
+    },
+    {
+      "archivo": "figuras/pta_galera/mapa_tsm_media.webp",
+      "bytes": 42468,
+      "sha256": "598be45dc0776edc46c7e3a6f6880a9d35b00d7d4bc445031430d85b41a3bcc4"
+    },
+    {
+      "archivo": "figuras/pta_lavapie/mapa_std_tsm.webp",
+      "bytes": 39398,
+      "sha256": "4d6b1a5dce7f835efde36455ed25617367571967c052741428c1ccd2e070e787"
+    },
+    {
+      "archivo": "figuras/pta_lavapie/mapa_tsm_media.webp",
+      "bytes": 38372,
+      "sha256": "6179b10519ab50395f5de9a7f56d9a482b391373e6f29b2d5f017e14a9464393"
+    },
+    {
+      "archivo": "figuras/pta_lengua_vaca/mapa_std_tsm.webp",
+      "bytes": 45486,
+      "sha256": "dd95dda568f32cbbe5a9dd2c93e13e522415c044e6b55f768b3e69da10d7beb6"
+    },
+    {
+      "archivo": "figuras/pta_lengua_vaca/mapa_tsm_media.webp",
+      "bytes": 39180,
+      "sha256": "3c2eeb9197be4c9e9250e670a114aeeec145009117156c9062ec584e73d3dd44"
+    },
+    {
+      "archivo": "figuras/pta_nugurne/mapa_std_tsm.webp",
+      "bytes": 36834,
+      "sha256": "204b4966fed7a30b323fd479f83fd28b2ee331cbd02dd411835d43d41a91ef4e"
+    },
+    {
+      "archivo": "figuras/pta_nugurne/mapa_tsm_media.webp",
+      "bytes": 40048,
+      "sha256": "752251d380785795a57852bc2dc237bfcfd139da797e1ecda6d3f06a70b7da5f"
+    },
+    {
+      "archivo": "figuras/pta_topocalma/mapa_std_tsm.webp",
+      "bytes": 42328,
+      "sha256": "4230741991f8d2e369a494e282833c5433b6a6af6e2a095fef4c7e2129bb8ec1"
+    },
+    {
+      "archivo": "figuras/pta_topocalma/mapa_tsm_media.webp",
+      "bytes": 41186,
+      "sha256": "7223406393301ce32fc90cf7e4724e91924e2bf85b18b1dacfcf0cd4ea5b38a2"
+    },
+    {
+      "archivo": "index.html",
+      "bytes": 4277,
+      "sha256": "1dc052011c79f8610feec42ecfd11906b2854ae37f22b7b4cb3a146f7f72270a"
+    },
+    {
+      "archivo": "js/app.js",
+      "bytes": 18226,
+      "sha256": "56785f33acfd9e13542a2c788038ebbdd4e129326857d58ae8e0a96a6acb59a9"
+    },
+    {
+      "archivo": "js/comprobar_datos.mjs",
+      "bytes": 1956,
+      "sha256": "d1021b0cb6b392bf93c5b1096ac1c13508b16b27e1ba75e4d43880334ff8873e"
+    },
+    {
+      "archivo": "js/comprobar_formato.mjs",
+      "bytes": 502,
+      "sha256": "db7703598a497ab171a425a31a9368786655d8ccd342a91a2c66d2e183fa7f51"
+    },
+    {
+      "archivo": "js/config.js",
+      "bytes": 131,
+      "sha256": "fa430bd9f830cb96150e3ce07b570cd54583e35493af5d2a1006f3601cf3acdd"
+    },
+    {
+      "archivo": "js/formato.mjs",
+      "bytes": 647,
+      "sha256": "1e379575088271c0c9a94acc887e2ed0d5a7f689278cecbee4ebe2611a0db756"
+    },
+    {
+      "archivo": "README.md",
+      "bytes": 3655,
+      "sha256": "fc1d6cdbc8fc735d727d61ff53db16de784654c6834dee5363ac269fd9c67d1e"
+    },
+    {
+      "archivo": "TERCEROS.md",
+      "bytes": 2719,
+      "sha256": "d7d7e8b0823a715fc2c6cb8c3a3f7309af11a878990aedc08a6cb6420cb43920"
+    }
+  ]
+}

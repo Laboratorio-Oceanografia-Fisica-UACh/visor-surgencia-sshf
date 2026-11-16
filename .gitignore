@@ -1,0 +1,26 @@
+# Material local de revisión: nunca forma parte del sitio público.
+/.local/
+/node_modules/
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+Thumbs.db
+
+# Datos originales, credenciales y entornos ajenos al visor estático.
+*.nc
+*.nc4
+*.mat
+*.h5
+*.grib
+*.grib2
+.env
+.env.*
+.cdsapirc
+*.pem
+*.key
+/cache/
+/.agents/
+/.claude/
+/.codex/
+/.orca/

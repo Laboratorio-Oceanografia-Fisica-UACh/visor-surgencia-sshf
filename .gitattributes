@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.webp binary
+*.png binary
+# Conservar también los bytes de la exportación científica original.
+/data/*.json -text whitespace=cr-at-eol
+/data/series/*.json -text whitespace=cr-at-eol

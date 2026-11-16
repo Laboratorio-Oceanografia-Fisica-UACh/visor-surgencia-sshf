@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "serie.schema.json",
+  "title": "series/<id>.json — visor web de la tesis, esquema 1.0.0",
+  "type": "object",
+  "required": ["esquema", "id", "ejemplo", "climatologia", "mensual", "anual"],
+  "additionalProperties": false,
+  "properties": {
+    "esquema": {"type": "string", "pattern": "^1\\.[0-9]+\\.[0-9]+$"},
+    "id": {"type": "string", "pattern": "^[a-z_]+$"},
+    "ejemplo": {"type": "boolean"},
+    "climatologia": {
+      "type": "object",
+      "required": ["estado", "meses", "ui", "cuisst", "sshf", "sst_costera", "t2", "dT", "frec_evento"],
+      "additionalProperties": false,
+      "properties": {
+        "estado": {"const": "descriptivo"},
+        "meses": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "integer"}},
+        "ui": {"$ref": "#/$defs/doce"}, "cuisst": {"$ref": "#/$defs/doce"}, "sshf": {"$ref": "#/$defs/doce"},
+        "sst_costera": {"$ref": "#/$defs/doce"}, "t2": {"$ref": "#/$defs/doce"}, "dT": {"$ref": "#/$defs/doce"},
+        "frec_evento": {"$ref": "#/$defs/doce"}
+      }
+    },
+    "mensual": {
+      "type": "object",
+      "required": ["estado", "fechas", "ui", "cuisst", "sshf", "sshf_anom", "dias_validos", "dias_evento"],
+      "additionalProperties": false,
+      "properties": {
+        "estado": {"const": "descriptivo"},
+        "fechas": {"type": "array", "items": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}$"}},
+        "ui": {"$ref": "#/$defs/vec"}, "cuisst": {"$ref": "#/$defs/vec"}, "sshf": {"$ref": "#/$defs/vec"},
+        "sshf_anom": {"$ref": "#/$defs/vec"},
+        "dias_validos": {"type": "array", "items": {"type": "integer"}},
+        "dias_evento": {"type": "array", "items": {"type": "integer"}}
+      }
+    },
+    "anual": {
+      "type": "object",
+      "required": ["estado", "anios", "dias_evento", "dias_validos", "sshf_anom_evento", "sshf_anom_resto"],
+      "additionalProperties": false,
+      "properties": {
+        "estado": {"const": "descriptivo"},
+        "anios": {"type": "array", "items": {"type": "integer"}},
+        "dias_evento": {"type": "array", "items": {"type": "integer"}},
+        "dias_validos": {"type": "array", "items": {"type": "integer"}},
+        "sshf_anom_evento": {"$ref": "#/$defs/vec"}, "sshf_anom_resto": {"$ref": "#/$defs/vec"}
+      }
+    }
+  },
+  "$defs": {
+    "vec": {"type": "array", "items": {"type": ["number", "null"]}},
+    "doce": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": ["number", "null"]}}
+  }
+}
