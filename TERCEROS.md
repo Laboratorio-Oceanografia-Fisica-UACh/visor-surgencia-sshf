@@ -1,8 +1,9 @@
 # Fuentes, créditos y condiciones de uso
 
 No se asigna una licencia general al repositorio. El software propio, los datos
-derivados, las figuras y el logo pueden tener condiciones diferentes. La preparación
-de estos archivos no acredita una autorización institucional de difusión.
+derivados, las figuras y el logo pueden tener condiciones diferentes. La difusión
+de esta versión fue autorizada por el autor antes de su publicación; esa autorización
+no concede permisos generales de reutilización ni sustituye las condiciones de terceros.
 
 ## Datos y recursos
 
@@ -16,8 +17,8 @@ de estos archivos no acredita una autorización institucional de difusión.
 | GSHHS/GSHHG | Costa en las figuras derivadas; Wessel y Smith | [Página y condiciones del proveedor](https://www.soest.hawaii.edu/pwessel/gshhg/). No se distribuye la base cartográfica. |
 | m_map | Herramienta utilizada para preparar las figuras; Rich Pawlowicz | [Proyecto y cita del proveedor](https://www.eoas.ubc.ca/~rich/map.html). No se distribuye su código. |
 | cmocean | Paletas de las figuras, Thyng et al. (2016) | [Descripción y referencia del proveedor](https://matplotlib.org/cmocean/). No se distribuye la biblioteca. |
-| 20 figuras WebP | Resultados y cartografía derivados del estudio | Se conservan sus píxeles originales. La autorización de difusión del material del estudio debe confirmarse con sus responsables institucionales. |
-| Logo LOFA | Archivo oficial proporcionado por el autor; cabecera de 512 × 512 px y favicon de 48 × 48 px | Proporción, colores y canal alfa conservados; tamaños adaptados al uso web. No se concede permiso de reutilización del logo. La autorización de publicación institucional está pendiente de confirmación. No se incluye un logo UACh adicional. |
+| 20 figuras WebP | Resultados y cartografía derivados del estudio | Se conservan sus píxeles originales. El autor autorizó su difusión en esta versión del visor. |
+| Logo LOFA | Archivo oficial proporcionado por el autor; cabecera de 512 × 512 px y favicon de 48 × 48 px | Proporción, colores y canal alfa conservados; tamaños adaptados al uso web. Su publicación en este visor fue autorizada por el autor. No se concede permiso general de reutilización del logo. No se incluye un logo UACh adicional. |
 
 ## Referencias regionales
 
@@ -44,8 +45,8 @@ de la posición geográfica de los cabos.
 
 ## Estado de autorización
 
-Antes del push debe confirmarse la autorización institucional para difundir el
-visor, el nombre y logo LOFA, las figuras, los datos derivados y los contrastes
-estacionales exploratorios. No se concede una licencia de reutilización mientras
+El autor confirmó la publicación del visor, el nombre y logo LOFA, las figuras,
+los datos derivados y los contrastes estacionales exploratorios antes del primer
+push. No se concede una licencia de reutilización mientras
 los titulares no la definan. Los créditos anteriores conservan el alcance y las
 condiciones de los proveedores y no los sustituyen.

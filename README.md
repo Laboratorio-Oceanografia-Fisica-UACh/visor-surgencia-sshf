@@ -67,20 +67,21 @@ internas de procesamiento.
 
 ## GitHub Pages
 
-Después de resolver las autorizaciones de publicación y de la integración en
-`main`, configurar Settings → Pages → Deploy from a branch →
+La publicación utiliza la rama `main` y la raíz del repositorio. Para reproducir
+la configuración: Settings → Pages → Deploy from a branch →
 `main` → `/(root)`, según la [guía de GitHub](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
-La URL prevista es
+La dirección de publicación es
 <https://laboratorio-oceanografia-fisica-uach.github.io/visor-surgencia-sshf/>.
 Las rutas son relativas y `.nojekyll` permite servir los archivos estáticos desde la raíz.
 No se incluye un workflow de despliegue propio.
 
-## Autorizaciones pendientes
+## Autorización de difusión y condiciones de uso
 
-No se ha establecido una licencia para el proyecto: queda pendiente de autorización
-institucional. Se ha preparado el logo oficial LOFA, con transparencia y proporción
-conservadas, para su uso en la cabecera y el favicon. Su incorporación local no acredita
-por sí sola permiso de difusión. Ver [créditos y contenidos de terceros](TERCEROS.md).
+El autor autorizó la publicación de esta versión del visor, incluidos el nombre y
+logo LOFA, las figuras, los datos derivados y el bloque estacional exploratorio.
+El logo oficial conserva su transparencia y proporción en la cabecera y el favicon.
+No se ha establecido una licencia general de reutilización para el proyecto;
+esa decisión sigue pendiente. Ver [créditos y contenidos de terceros](TERCEROS.md).
 Los visitantes encuentran las referencias y créditos en la sección correspondiente
 del sitio. La autorización de difusión y una eventual licencia de reutilización son
 decisiones distintas; no se establece una licencia general por defecto.

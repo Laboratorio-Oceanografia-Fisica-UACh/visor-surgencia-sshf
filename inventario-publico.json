@@ -240,13 +240,13 @@
     },
     {
       "archivo": "README.md",
-      "bytes": 4634,
-      "sha256": "bc8a895cf2d88a65f41c0e11853376f2ea8a1f6f47b0d69660f3cda6a538ae46"
+      "bytes": 4738,
+      "sha256": "4c15679a2f45a58f5a37f4787d2e6431213e7ab47732fd8c0c7994e1b5e7467f"
     },
     {
       "archivo": "TERCEROS.md",
-      "bytes": 4999,
-      "sha256": "b75003a188c639b622e40d7853548a6f08b7fd23a1e6f9debf469bafb221ac08"
+      "bytes": 5016,
+      "sha256": "b24adff8537a630768b9cd43a268ecdb0586ecb7008b03e1dcd8adbc43e0aee0"
     }
   ],
   "commit_exportador_editorial": "09b24fbb9c1d3dcd1a0c3c54266a449a896fefe2"
