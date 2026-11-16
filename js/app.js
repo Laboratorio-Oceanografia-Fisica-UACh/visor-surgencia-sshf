@@ -42,6 +42,7 @@ function renderGeneral() {
   $("limitaciones-generales").innerHTML = p.limitaciones.map(l => `<li>${texto(l)}</li>`).join("");
   $("figuras-generales").innerHTML = p.figuras.map(figuraHtml).join("");
   $("credito").textContent = `${p.autor} · ${p.institucion}`;
+  $("pie-proyecto").textContent = p.titulo;
   $("version").textContent = `Datos ${version.generado} · esquema ${version.esquema}`;
 }
 
@@ -62,7 +63,7 @@ function crearMapa() {
     const clase = f.sshf_anual.significativo_holm ? "relleno" : "hueco";
     const icono = L.divIcon({ className: "icono-foco", html: `<span class="punto ${clase}" style="--foco-color:${color}"></span>`, iconSize: [34,34], iconAnchor: [17,17] });
     const marcador = L.marker([f.lat, f.lon], { icon: icono, title: f.nombre }).addTo(mapa);
-    marcador.bindTooltip(f.nombre, { direction: "right", offset: [12,0] });
+    marcador.bindTooltip(`${f.nombre} · centro analítico de TSM`, { direction: "right", offset: [12,0] });
     marcador.on("click", () => seleccionar(f.id));
     marcadores.set(f.id, marcador);
     limites.push([f.lat, f.lon]);
@@ -96,7 +97,8 @@ function estadistica(f) {
 function renderPanel(f) {
   const u = f.umbrales;
   const indices = f.indices;
-  $("panel").innerHTML = `<div class="panel-cabecera"><p class="sobretitulo">${texto(f.zona_nombre)} · ${numero(Math.abs(f.lat))}° S · ${numero(Math.abs(f.lon))}° O</p><h3>${texto(f.nombre)}</h3><p>${texto(f.resumen)}</p><a class="enlace-directo" href="#foco=${encodeURIComponent(f.id)}">Enlace directo a este foco ↗</a></div>
+  const latReferencia = (f.cajas.viento[2] + f.cajas.viento[3]) / 2;
+  $("panel").innerHTML = `<div class="panel-cabecera"><p class="sobretitulo">${texto(f.zona_nombre)} · centro analítico: ${numero(Math.abs(f.lat))}° S · ${numero(Math.abs(f.lon))}° O</p><h3>${texto(f.nombre)}</h3><p>${texto(f.resumen)}</p><p class="contexto-nota">Latitud costera de referencia: ${numero(Math.abs(latReferencia))}° S, anclaje de la caja de viento. El marcador indica el centro del núcleo analítico y puede estar desplazado del cabo.</p><a class="enlace-directo" href="#foco=${encodeURIComponent(f.id)}">Enlace directo a este foco ↗</a></div>
   <nav class="panel-nav" aria-label="Secciones del foco"><a href="#foco-resultado">Resultado</a><a href="#foco-indices">Índices</a><a href="#foco-series">Series</a><a href="#foco-estacional">Estaciones</a><a href="#foco-contexto">Contexto</a></nav>
   <section id="foco-resultado" class="panel-seccion"><p class="sobretitulo">RESULTADO ANUAL</p>${estadistica(f)}<div class="leyenda-bosque"><span><i class="muestra evidencia"></i> Relleno: supera Holm</span><span><i class="muestra hueco"></i> Hueco: no supera Holm</span><span><i class="marca-activo"></i> Foco seleccionado</span></div><div id="bosque" class="grafico bosque" aria-label="Comparación entre focos"></div></section>
   <section id="foco-indices" class="panel-seccion"><p class="sobretitulo">ÍNDICES Y UMBRALES</p>${estado(indices)}<div class="tabla-scroll"><table><thead><tr><th>Variable</th><th>Días evaluables</th><th>Días de evento</th></tr></thead><tbody>${["ui","cuisst","sshf","dT"].map(k => `<tr><th>${texto(nombreVariable(k))}</th><td>${valorConUnidad(indices.todos[k], k)}</td><td>${valorConUnidad(indices.evento[k], k)}</td></tr>`).join("")}</tbody></table></div><div class="umbral-ui"><span>Umbral UI</span><strong>${valorConUnidad(u.ui,"ui")}</strong></div><div id="umbral-cuisst" class="grafico" aria-label="Umbral mensual de CUISST"></div></section>
@@ -130,7 +132,8 @@ function dibujarClimatologia(serie) {
   if (!serie) return;
   const clave = $("variable-clima").value;
   const y = serie.climatologia[clave];
-  graficar("climatologia", [{ type: "scatter", mode: "lines+markers", x: meses, y, line: { color: "#087E8B", width: 3, shape: "spline" }, marker: { size: 5 }, hovertemplate: `%{x}: %{y:.2f} ${texto(unidad(clave))}<extra></extra>` }], { title: { text: `${nombreVariable(clave)} · promedio mensual`, font: { size: 15 } }, height: 280, xaxis: { type: "category" }, yaxis: { title: unidad(clave), gridcolor: "#e4e9e9" } });
+  const titulo = window.innerWidth <= 540 ? "Promedio mensual" : `${nombreVariable(clave)} · promedio mensual`;
+  graficar("climatologia", [{ type: "scatter", mode: "lines+markers", x: meses, y, line: { color: "#087E8B", width: 3, shape: "spline" }, marker: { size: 5 }, hovertemplate: `%{x}: %{y:.2f} ${texto(unidad(clave))}<extra></extra>` }], { title: { text: titulo, font: { size: 15 } }, height: 280, xaxis: { type: "category" }, yaxis: { title: unidad(clave), gridcolor: "#e4e9e9" } });
 }
 function dibujarMensual(serie) {
   graficar("serie-mensual", [{ type: "scatter", mode: "lines", x: serie.mensual.fechas, y: serie.mensual.sshf_anom, connectgaps: false, line: { color: "#C8553D", width: 1.8 }, hovertemplate: `%{x}: %{y:.2f} ${texto(unidad("sshf_anom") || unidad("sshf"))}<extra></extra>` }], { title: { text: "Anomalía mensual de SSHF", font: { size: 15 } }, height: 280, xaxis: { type: "date", rangeslider: { visible: false } }, yaxis: { title: unidad("sshf_anom") || unidad("sshf"), gridcolor: "#e4e9e9" } });
@@ -193,7 +196,7 @@ async function iniciar() {
     if (id) seleccionar(id, false);
   } catch (error) {
     $("error-carga").hidden = false;
-    $("error-carga").textContent = `${error.message} Sirve la raíz del sitio con un servidor HTTP local para abrir el visor.`;
+    $("error-carga").textContent = "No se pudieron cargar los datos del visor. Comprueba tu conexión y vuelve a cargar la página.";
   }
 }
 iniciar();

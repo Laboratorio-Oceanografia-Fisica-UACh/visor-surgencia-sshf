@@ -2,5 +2,34 @@
 .cabecera>*{min-width:0}.marca{flex:1}.marca-icono{flex:none}.enlace-cabecera{flex:none;white-space:nowrap}.panel{overflow:hidden}.tabla-scroll{width:100%;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch}.tabla-scroll table{width:max-content;min-width:100%}.panel-nav{max-width:100%;-webkit-overflow-scrolling:touch}.grafico{min-width:0;overflow:hidden}.leyenda-bosque{display:flex;flex-wrap:wrap;gap:7px 15px;font-size:.72rem;color:var(--gris);margin:0 0 10px}.leyenda-bosque span{display:flex;align-items:center;gap:6px}.marca-activo{width:12px;height:12px;border:3px solid var(--azul);border-radius:50%;display:inline-block}@media(max-width:540px){.marca{font-size:.61rem;letter-spacing:.06em}.marca small{font-size:.57rem}.enlace-cabecera{font-size:.63rem}.panel-seccion .estado-exploratorio{display:block}.estado-exploratorio strong{display:block;margin-bottom:4px}.umbral-ui{gap:12px;flex-wrap:wrap}}
 @media(max-width:540px){.tabla-estacional{overflow:visible}.tabla-estacional table,.tabla-estacional tbody,.tabla-estacional tr,.tabla-estacional th,.tabla-estacional td{display:block;width:100%;min-width:0;white-space:normal}.tabla-estacional thead{display:none}.tabla-estacional tr{padding:12px 14px;margin:0 0 12px;background:#fff;border:1px solid #e4d5ca}.tabla-estacional tr>th{font-size:.95rem;color:var(--azul);padding:0 0 8px;border-bottom:1px solid var(--linea)}.tabla-estacional td{padding:8px 0;border-bottom:1px solid var(--linea);overflow-wrap:anywhere}.tabla-estacional td:last-child{border-bottom:0;color:#8c3e2f;font-weight:700}.tabla-estacional td::before{content:attr(data-label);display:block;color:var(--gris);font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}.tabla-estacional td small{font-weight:400;color:var(--gris)}}
 
-/* Cr?ditos legibles sobre el fondo del pie de p?gina. */
+/* Créditos legibles sobre el fondo del pie de página. */
 .pie-pagina a{color:#c2e0e2;text-underline-offset:3px}
+
+/* Ajustes de publicación: identidad institucional, contraste y lectura táctil. */
+:root{--turquesa:#006672;--gris:#4b626f;--acento:#ad432d}
+.cabecera{height:auto;min-height:90px;gap:16px;padding-top:10px;padding-bottom:10px}
+.logo-lofa{display:block;width:64px;height:64px;object-fit:contain;flex:none}
+.marca{font-size:13px;letter-spacing:.08em}.marca small{font-size:12px;color:#b6e6e8}
+.enlace-cabecera{display:inline-flex;align-items:center;min-height:44px;padding:8px;font-size:14px}
+.meta-proyecto span+span:before{content:'·'}
+.mapa-nota{margin:0;padding:14px;background:#fff;font-size:13px;color:var(--tinta);border:1px solid var(--linea)}
+.enlace-directo,.figura figcaption a,.fuente a,.referencias a{display:inline-flex;align-items:center;min-height:44px;padding:8px 2px;overflow-wrap:anywhere}
+.referencias{font-size:16px}.referencias li{margin-bottom:14px}
+.pie-pagina{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:32px;font-size:14px;line-height:1.6}
+.pie-pagina strong{font-size:17px;color:#fff}.pie-pagina p{margin:8px 0}.pie-pagina nav{display:flex;flex-wrap:wrap;gap:8px 24px}.pie-pagina nav a{display:inline-flex;align-items:center;min-height:44px}
+.control-grafico select{min-height:44px}.control-grafico label{min-width:0}
+:focus-visible{outline:3px solid #ad432d;outline-offset:3px}
+@media(max-width:540px){
+  .cabecera{min-height:82px;padding:10px 14px;gap:8px}
+  .logo-lofa{width:54px;height:54px}.marca{gap:9px;font-size:12px;letter-spacing:.025em}.marca small{font-size:11px}.enlace-cabecera{font-size:13px;padding:4px}
+  .hero h1{font-size:2.35rem;overflow-wrap:break-word}.subtitulo{font-size:17px;white-space:normal;overflow-wrap:break-word}.meta-proyecto{font-size:13px}
+  .meta-proyecto span+span:before{display:none}
+  .lista-focos{grid-template-columns:1fr 1fr}.foco-boton{padding:12px 8px;gap:6px;min-height:84px;flex-wrap:wrap}.foco-indice{font-size:12px}.foco-nombre{font-size:13px;flex-basis:calc(100% - 26px)}.foco-valor{font-size:14px;margin-left:21px;text-align:left}.foco-valor small{display:inline;margin-left:6px}.foco-nombre small,.foco-valor small{font-size:11px}
+  .leyenda,.leyenda-bosque{font-size:12px}.panel-nav a{font-size:12px;letter-spacing:.04em;min-height:44px;padding:12px}.mapa-etiqueta,.resultado-tarjeta span{font-size:11px}
+  .sobretitulo{font-size:12px}.panel-cabecera p,.contexto-nota,.figura figcaption{font-size:14px}
+  .estadistica-cifra em{font-size:14px}.estadistica-cifra span,.estadistica-dos span,.estadistica-dos small,.umbral-ui span{font-size:12px}
+  table{font-size:14px}thead th{font-size:12px}.tabla-estacional td::before{font-size:12px}
+  .metrica-eventos span{font-size:12px}.metrica-eventos strong{font-size:20px}
+  .control-grafico{align-items:stretch;flex-direction:column}.control-grafico label{font-size:15px}.control-grafico select{max-width:100%;width:100%;font-size:15px;white-space:normal}
+  .fuente,.fuentes-grid ul{font-size:15px}.pie-pagina{grid-template-columns:1fr;font-size:14px;gap:18px}.mapa-nota{font-size:13px}
+}

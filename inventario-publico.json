@@ -6,7 +6,7 @@
     "archivos_incluyendo_nojekyll": 36,
     "bytes": 1180344
   },
-  "nota": "Inventario de los archivos preparados, excluye este propio manifiesto y los materiales locales de revisi?n. Los JSON cient?ficos y las figuras se conservan byte a byte.",
+  "nota": "Inventario de los archivos públicos; excluye este manifiesto y el material local de revisión. La edición editorial conserva todos los números, decisiones científicas, series y figuras.",
   "archivos": [
     {
       "archivo": ".gitattributes",
@@ -24,9 +24,24 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "archivo": "assets/favicon.png",
+      "bytes": 6245,
+      "sha256": "c458caa4e364e356be16868b852223d09ef67fae08d664f588dbb20ad879ceaa"
+    },
+    {
+      "archivo": "assets/logo-lofa.webp",
+      "bytes": 263690,
+      "sha256": "0cd00c94de0b20aa7d9bcedd0ca6d3f3e7a6818ed7927cbc567dbd17f349a060"
+    },
+    {
       "archivo": "css/estilo.css",
-      "bytes": 15426,
-      "sha256": "c5d6b4e89cdc43bd0ddbdd1d2feac255154105fc7f0d539f8a94d575b32db23c"
+      "bytes": 18481,
+      "sha256": "35f0a67fe03d758a39c3f3ddf51a494b8449ad918aac191eb26ea40910b1665d"
+    },
+    {
+      "archivo": "data/edicion.json",
+      "bytes": 444,
+      "sha256": "17988f6e47054be76e1ab9d6f240ea8599a2b010389ab770a29ad053961ab12a"
     },
     {
       "archivo": "data/esquema/focos.schema.json",
@@ -40,8 +55,8 @@
     },
     {
       "archivo": "data/focos.json",
-      "bytes": 44926,
-      "sha256": "d943ed9879a0a9c6cd7d091df57ebe4b53db60556bc6dad16c6ce980e1e7dede"
+      "bytes": 46028,
+      "sha256": "32c0ec184d74b3745dd4c62b1be3ecfba89322eb56f897d1c770df1704318af3"
     },
     {
       "archivo": "data/series/bahia_antofagasta.json",
@@ -190,13 +205,13 @@
     },
     {
       "archivo": "index.html",
-      "bytes": 4277,
-      "sha256": "1dc052011c79f8610feec42ecfd11906b2854ae37f22b7b4cb3a146f7f72270a"
+      "bytes": 8143,
+      "sha256": "a2bb0a1ff74d21b5d079a7d267b929b94afb793d7e9dbac6a01fa45710a04a4c"
     },
     {
       "archivo": "js/app.js",
-      "bytes": 18226,
-      "sha256": "56785f33acfd9e13542a2c788038ebbdd4e129326857d58ae8e0a96a6acb59a9"
+      "bytes": 18686,
+      "sha256": "51ddec1b8452ca211b3d528e4419ef49969709f6034f402e2fe9f3874ef7565c"
     },
     {
       "archivo": "js/comprobar_datos.mjs",
@@ -205,8 +220,13 @@
     },
     {
       "archivo": "js/comprobar_formato.mjs",
-      "bytes": 502,
-      "sha256": "db7703598a497ab171a425a31a9368786655d8ccd342a91a2c66d2e183fa7f51"
+      "bytes": 578,
+      "sha256": "1709c722df87ce8ffcff15cc22b481d2f79f95c08366c4b667fd8f9d582a8241"
+    },
+    {
+      "archivo": "js/comprobar_publicacion.mjs",
+      "bytes": 1980,
+      "sha256": "de8f87f7b585faa6c5d14f63a6e82ea74909a24eea505acbde2edc25ae295603"
     },
     {
       "archivo": "js/config.js",
@@ -215,18 +235,19 @@
     },
     {
       "archivo": "js/formato.mjs",
-      "bytes": 647,
-      "sha256": "1e379575088271c0c9a94acc887e2ed0d5a7f689278cecbee4ebe2611a0db756"
+      "bytes": 667,
+      "sha256": "9bd231b817fa6ef5683f279e1e6316ae6b0f9c8f865731c9d31bb998eb3e73fa"
     },
     {
       "archivo": "README.md",
-      "bytes": 3655,
-      "sha256": "fc1d6cdbc8fc735d727d61ff53db16de784654c6834dee5363ac269fd9c67d1e"
+      "bytes": 4634,
+      "sha256": "bc8a895cf2d88a65f41c0e11853376f2ea8a1f6f47b0d69660f3cda6a538ae46"
     },
     {
       "archivo": "TERCEROS.md",
-      "bytes": 2719,
-      "sha256": "d7d7e8b0823a715fc2c6cb8c3a3f7309af11a878990aedc08a6cb6420cb43920"
+      "bytes": 4999,
+      "sha256": "b75003a188c639b622e40d7853548a6f08b7fd23a1e6f9debf469bafb221ac08"
     }
-  ]
+  ],
+  "commit_exportador_editorial": "09b24fbb9c1d3dcd1a0c3c54266a449a896fefe2"
 }

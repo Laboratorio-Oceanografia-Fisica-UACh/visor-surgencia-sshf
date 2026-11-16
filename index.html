@@ -4,18 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0B3954">
-  <title>Visor de surgencia costera</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <meta name="description" content="Ocho núcleos de surgencia frente a Chile: mapas, series y resultados del flujo de calor sensible superficial, 2002–2025. LOFA, Universidad Austral de Chile.">
+  <meta property="og:title" content="Visor de surgencia y flujo de calor sensible · LOFA UACh">
+  <meta property="og:description" content="Explora ocho núcleos costeros, sus series y los resultados científicos del estudio presentado en OFMC 2026.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/favicon.png">
+  <title>Flujo de calor sensible superficial como indicador de eventos de surgencia costera</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/estilo.css">
-  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script defer src="https://cdn.plot.ly/plotly-basic-2.35.2.min.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.plot.ly/plotly-basic-2.35.2.min.js" integrity="sha384-wQ3lfCxuvLfhHGiSdHF5+e3NZ1zNwEMd8/nII+K7VKChF9llO/OwOcn/aVRkB7az" crossorigin="anonymous"></script>
   <script type="module" src="./js/app.js"></script>
 </head>
 <body>
   <div id="aviso-ejemplo" class="aviso-ejemplo" hidden>Datos de ejemplo: las series y los textos son sintéticos y no corresponden a resultados de la tesis.</div>
   <header class="cabecera">
-    <a class="marca" href="#inicio" aria-label="Ir al inicio"><span class="marca-icono">≈</span><span>VISOR DE LA TESIS<br><small id="marca-autor"></small></span></a>
-    <a class="enlace-cabecera" href="#metodo">Conoce el método <span aria-hidden="true">↗</span></a>
+    <a class="marca" href="#inicio" aria-label="Ir al inicio del visor"><img class="logo-lofa" src="./assets/logo-lofa.webp" alt="LOFA, Laboratorio de Oceanografía Física de la Universidad Austral de Chile" width="512" height="512"><span>VISOR DE SURGENCIA<br><small id="marca-autor"></small></span></a>
+    <a class="enlace-cabecera" href="#metodo">Método <span aria-hidden="true">↗</span></a>
   </header>
   <main id="inicio">
     <section class="hero" aria-labelledby="titulo-proyecto">
@@ -34,6 +39,7 @@
       <div class="explorador-grid">
         <div class="mapa-columna">
           <div class="mapa-marco"><div id="mapa" role="application" aria-label="Mapa interactivo de los focos de la costa de Chile"></div><div class="mapa-etiqueta">PACÍFICO SUR / CHILE</div></div>
+          <p class="mapa-nota">Marcadores: centros de los núcleos analíticos de TSM, asociados a los focos nombrados. No representan la posición de los cabos geográficos.</p>
           <div class="leyenda" aria-label="Leyenda del mapa"><span><i class="muestra evidencia"></i> Con evidencia tras Holm</span><span><i class="muestra positivo"></i> Positivo sin ajuste</span><span><i class="muestra neutro"></i> Sin diferencia</span><span><i class="muestra hueco"></i> Hueco: no supera Holm</span></div>
           <div id="lista-focos" class="lista-focos" aria-label="Seleccionar foco"></div>
         </div>
@@ -44,8 +50,14 @@
     <section id="investigacion" class="contenido-general" aria-labelledby="investigacion-titulo"><p class="sobretitulo">02 / INVESTIGACIÓN</p><h2 id="investigacion-titulo">La investigación</h2><div id="resultado-general"></div><div id="figuras-generales" class="galeria"></div></section>
     <section id="metodo" class="contenido-general metodo" aria-labelledby="metodo-titulo"><p class="sobretitulo">03 / MÉTODO</p><h2 id="metodo-titulo">Del dato al resultado</h2><div id="pasos-metodo" class="pasos"></div></section>
     <section class="contenido-general fuentes" aria-labelledby="fuentes-titulo"><p class="sobretitulo">04 / CONTEXTO</p><h2 id="fuentes-titulo">Fuentes y límites</h2><div class="fuentes-grid"><div><h3>Fuentes</h3><div id="fuentes-lista"></div></div><div><h3>Limitaciones generales</h3><ul id="limitaciones-generales"></ul></div></div></section>
+    <section id="referencias" class="contenido-general referencias" aria-labelledby="referencias-titulo"><p class="sobretitulo">05 / REFERENCIAS</p><h2 id="referencias-titulo">Contexto científico y créditos</h2><p>Los artículos aportan contexto regional sobre surgencia. La selección de cada núcleo analítico y sus límites corresponde a este estudio; estas referencias no se presentan como validación de esas coordenadas.</p><ul>
+      <li>Rodríguez, Marín, Farías y Oyarce (1991). <em>Identification of an upwelling zone by remote sensing and in situ measurements, Mejillones del Sur Bay (Antofagasta-Chile)</em>. Scientia Marina 55(3), 467–473. <a href="https://scimar.icm.csic.es/index.php/secId/6/IdNum/87/" target="_blank" rel="noopener noreferrer">Índice de la revista ↗</a>. Existencia bibliográfica confirmada; atribución específica al núcleo no confirmada.</li>
+      <li>Piñones et al. (2007). <em>Nearshore surface temperatures in Antofagasta Bay (Chile) and adjacent upwelling centers</em>. <a href="https://doi.org/10.7773/cm.v33i1.1226" target="_blank" rel="noopener noreferrer">Artículo ↗</a>.</li>
+      <li>Moraga, Valdebenito y Rutllant (2001). <em>Condiciones oceanográficas durante la fase de relajación de un evento de surgencia invernal frente a Punta Lengua de Vaca, Coquimbo</em>. <a href="https://doi.org/10.4067/S0717-71782001000100006" target="_blank" rel="noopener noreferrer">Artículo ↗</a>.</li>
+      <li>Letelier, Pizarro y Nuñez (2009). <em>Seasonal variability of coastal upwelling and the upwelling front off central Chile</em>. <a href="https://doi.org/10.1029/2008JC005171" target="_blank" rel="noopener noreferrer">Artículo ↗</a>. Contexto de Chile central; no se ha confirmado que respalde individualmente Curaumilla, Topocalma, Nugurne o Galera.</li>
+    </ul><p>Cartografía interactiva: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a>. Bibliotecas: <a href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">Leaflet</a> y <a href="https://plotly.com/javascript/" target="_blank" rel="noopener noreferrer">Plotly.js</a>. Las figuras del estudio utilizan GSHHS, m_map y cmocean. Los resultados estacionales son exploratorios.</p><p>Los datos de ERA5 proceden de ECMWF / Copernicus Climate Change Service (C3S). Las interpretaciones de este estudio no expresan necesariamente la posición de los proveedores de datos.</p></section>
   </main>
-  <footer class="pie-pagina"><p>Logotipos institucionales pendientes de autorización.<br>Referencias de los focos: atribución documental pendiente de revisión.<br><a href="./TERCEROS.md">Créditos y pendientes de autorización</a></p><div id="credito"></div><div id="version"></div></footer>
+  <footer class="pie-pagina"><div><strong>Laboratorio de Oceanografía Física · LOFA</strong><p>Universidad Austral de Chile</p><p id="pie-proyecto"></p></div><div><p id="credito"></p><p>Datos: ERA5 · ECMWF/C3S y MUR SST · JPL/PO.DAAC</p><nav aria-label="Enlaces del pie"><a href="#metodo">Metodología</a><a href="#referencias">Referencias y créditos</a></nav><p id="version"></p></div></footer>
   <div id="error-carga" class="error-carga" role="alert" hidden></div>
 </body>
 </html>

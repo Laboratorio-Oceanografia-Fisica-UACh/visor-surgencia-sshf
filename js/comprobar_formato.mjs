@@ -9,4 +9,6 @@ assert.equal(diferencia(0.0292), "+0,03");
 assert.equal(diferencia(-5.18), "−5,18");
 assert.equal(diferencia(null), "—");
 assert.equal(numero(null), "—");
+assert.equal(numero(-9.93), "−9,93");
+assert.equal(valorP(0), "< 0,001");
 console.log("Formato válido: p pequeños, signos y datos ausentes.");

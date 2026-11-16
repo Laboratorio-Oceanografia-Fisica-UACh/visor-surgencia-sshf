@@ -5,12 +5,12 @@
   "subtitulo": "Ocho focos de afloramiento frente a Chile, 23° S – 40° S",
   "autor": "Vicente Jara Juleff",
   "institucion": "Tesis de Biología Marina · Laboratorio de Oceanografía Física · Universidad Austral de Chile",
-  "resumen": "La surgencia costera lleva agua fría a la superficie y sostiene la productividad del sistema de Humboldt. Esta tesis examina si esa superficie más fría se asocia con un cambio en el flujo de calor sensible entre el océano y la atmósfera (SSHF). Para ocho focos de afloramiento descritos en la literatura se comparó el SSHF de los días de evento de surgencia con el del resto de los días, entre junio de 2002 y diciembre de 2025, usando temperatura superficial del mar satelital y el reanálisis ERA5.",
+  "resumen": "La surgencia costera lleva agua fría a la superficie y sostiene la productividad del sistema de Humboldt. Esta tesis examina si esa superficie más fría se asocia con un cambio en el flujo de calor sensible entre el océano y la atmósfera (SSHF). Para ocho núcleos analíticos asociados a sectores de afloramiento se comparó el SSHF de los días de evento de surgencia con el del resto de los días, entre junio de 2002 y diciembre de 2025, usando temperatura superficial del mar satelital y el reanálisis ERA5.",
   "metodo": [
    {
     "paso": 1,
     "titulo": "Núcleo del foco",
-    "texto": "En cada foco se ubica el mínimo de desviación estándar de la temperatura superficial del mar junto al cabo y se definen tres cajas: núcleo costero, referencia oceánica a 200 km de la costa y caja de viento."
+    "texto": "En torno a una latitud costera de referencia se busca el mínimo de desviación estándar de la TSM y se define el núcleo analítico. Su centro puede estar desplazado del cabo. La referencia oceánica se sitúa a 200 km del núcleo y la caja de viento se ancla en la latitud costera de referencia."
    },
    {
     "paso": 2,
@@ -36,8 +36,8 @@
    },
    {
     "nombre": "MUR SST v4.1",
-    "detalle": "Temperatura superficial del mar diaria, 0,01°. JPL / PO.DAAC.",
-    "doi": null
+    "detalle": "JPL MUR MEaSUREs Project (2015). GHRSST Level 4 MUR Global Foundation Sea Surface Temperature Analysis (v4.1). PO.DAAC. TSM diaria, 0,01°.",
+    "doi": "10.5067/GHGMR-4FJ04"
    }
   ],
   "limitaciones": [
@@ -122,7 +122,7 @@
    {
     "archivo": "figuras/general/poster_fig4_estacional.webp",
     "titulo": "Ciclo estacional del índice térmico y del SSHF",
-    "pie": "Medias climatológicas de los ocho focos. El flujo es negativo (el océano pierde calor) la mayor parte del año en seis de ellos.",
+    "pie": "Medias climatológicas de los ocho focos. En 7 de los 8 núcleos el SSHF es negativo en más de seis de los doce meses climatológicos: el océano pierde calor sensible. Este conteo descriptivo no es una prueba de significancia.",
     "estado": "descriptivo",
     "ancho": 1600,
     "alto": 791
@@ -168,7 +168,7 @@
      -22.645
     ]
    },
-   "referencia": "Rodríguez et al. 1991, Sci. Mar. 55(3):467-473",
+   "referencia": "Contexto regional: Rodríguez et al. 1991, Sci. Mar. 55(3):467-473. La atribución específica a este núcleo y sus límites no está confirmada.",
    "umbrales": {
     "ui": 476.5,
     "cuisst_mensual": [
@@ -282,10 +282,10 @@
     ]
    },
    "serie": "series/pta_angamos.json",
-   "resumen": "Punta Angamos (22,6° S) pertenece a la zona norte del área de estudio. Se identificaron 1125 días de evento conjunto (13,1 % de los días evaluables), en 313 rachas de 3,6 días de duración media. En esos días la anomalía de SSHF fue 2,26 W m⁻² mayor que en el resto (IC 95 %: +1,82 a +2,72), y la diferencia se mantiene tras el ajuste de Holm. El flujo medio es negativo en ambos grupos (−7,5 y −9,9 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "resumen": "Punta Angamos: el núcleo analítico está centrado en 22,6° S, en la zona norte del área de estudio. Esta coordenada representa el mínimo de variabilidad de TSM seleccionado, no la posición del cabo geográfico. Se identificaron 1125 días de evento conjunto (13,1 % de los días evaluables), en 313 rachas de 3,6 días de duración media. En esos días la anomalía de SSHF fue 2,26 W m⁻² mayor que en el resto (IC 95 %: +1,82 a +2,72), y la diferencia se mantiene tras el ajuste de Holm. El flujo medio es negativo en ambos grupos (−7,5 y −9,9 W m⁻²): el océano pierde calor sensible también durante los eventos.",
    "limitaciones": [
     "El viento favorable a la surgencia es casi permanente en esta zona, por lo que los días de evento se distinguen del resto sobre todo por el contraste térmico.",
-    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+    "Las referencias aportan contexto regional; no verifican por sí solas las coordenadas ni los límites del núcleo analítico."
    ],
    "figuras": [
     {
@@ -334,7 +334,7 @@
      -23.325
     ]
    },
-   "referencia": "Piñones et al. 2007, doi:10.7773/cm.v33i1.1226",
+   "referencia": "Contexto regional: Piñones et al. 2007, doi:10.7773/cm.v33i1.1226. La atribución específica a este núcleo y sus límites no está confirmada.",
    "umbrales": {
     "ui": 476.5,
     "cuisst_mensual": [
@@ -448,11 +448,11 @@
     ]
    },
    "serie": "series/bahia_antofagasta.json",
-   "resumen": "Bahía de Antofagasta (23,7° S) pertenece a la zona norte del área de estudio. Se identificaron 1092 días de evento conjunto (12,7 % de los días evaluables), en 295 rachas de 3,7 días de duración media. La diferencia estimada de anomalía de SSHF es positiva (+0,87 W m⁻²; IC 95 %: +0,23 a +1,51), pero no supera el ajuste por comparaciones múltiples. El flujo medio es negativo en ambos grupos (−10,1 y −11,0 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "resumen": "Bahía de Antofagasta: el núcleo analítico está centrado en 23,7° S, en la zona norte del área de estudio. Esta coordenada representa el mínimo de variabilidad de TSM seleccionado, no la posición del cabo geográfico. Se identificaron 1092 días de evento conjunto (12,7 % de los días evaluables), en 295 rachas de 3,7 días de duración media. La diferencia estimada de anomalía de SSHF es positiva (+0,87 W m⁻²; IC 95 %: +0,23 a +1,51), pero no supera el ajuste por comparaciones múltiples. El flujo medio es negativo en ambos grupos (−10,1 y −11,0 W m⁻²): el océano pierde calor sensible también durante los eventos.",
    "limitaciones": [
     "El intervalo individual y la decisión ajustada responden a preguntas distintas: aquí el efecto estimado es positivo, pero la evidencia no alcanza tras corregir por ocho comparaciones.",
     "El viento favorable a la surgencia es casi permanente en esta zona, por lo que los días de evento se distinguen del resto sobre todo por el contraste térmico.",
-    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+    "Las referencias aportan contexto regional; no verifican por sí solas las coordenadas ni los límites del núcleo analítico."
    ],
    "figuras": [
     {
@@ -501,7 +501,7 @@
      -29.625
     ]
    },
-   "referencia": "Moraga et al. 2001, doi:10.4067/S0717-71782001000100006",
+   "referencia": "Contexto regional: Moraga et al. 2001, doi:10.4067/S0717-71782001000100006. La atribución específica a este núcleo y sus límites no está confirmada.",
    "umbrales": {
     "ui": 544.3,
     "cuisst_mensual": [
@@ -615,9 +615,9 @@
     ]
    },
    "serie": "series/pta_lengua_vaca.json",
-   "resumen": "Punta Lengua de Vaca (30,1° S) pertenece a la zona central del área de estudio. Se identificaron 936 días de evento conjunto (10,9 % de los días evaluables), en 253 rachas de 3,7 días de duración media. En esos días la anomalía de SSHF fue 2,02 W m⁻² mayor que en el resto (IC 95 %: +1,49 a +2,54), y la diferencia se mantiene tras el ajuste de Holm. El flujo medio es negativo en ambos grupos (−16,2 y −18,1 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "resumen": "Punta Lengua de Vaca: el núcleo analítico está centrado en 30,1° S, en la zona central del área de estudio. Esta coordenada representa el mínimo de variabilidad de TSM seleccionado, no la posición del cabo geográfico. Se identificaron 936 días de evento conjunto (10,9 % de los días evaluables), en 253 rachas de 3,7 días de duración media. En esos días la anomalía de SSHF fue 2,02 W m⁻² mayor que en el resto (IC 95 %: +1,49 a +2,54), y la diferencia se mantiene tras el ajuste de Holm. El flujo medio es negativo en ambos grupos (−16,2 y −18,1 W m⁻²): el océano pierde calor sensible también durante los eventos.",
    "limitaciones": [
-    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+    "Las referencias aportan contexto regional; no verifican por sí solas las coordenadas ni los límites del núcleo analítico."
    ],
    "figuras": [
     {
@@ -666,7 +666,7 @@
      -32.625
     ]
    },
-   "referencia": "Letelier et al. 2009, doi:10.1029/2008JC005171",
+   "referencia": "Contexto regional: Letelier et al. 2009, doi:10.1029/2008JC005171. La atribución específica a este núcleo y sus límites no está confirmada.",
    "umbrales": {
     "ui": 544.3,
     "cuisst_mensual": [
@@ -780,9 +780,9 @@
     ]
    },
    "serie": "series/pta_curaumilla.json",
-   "resumen": "Punta Curaumilla (33,0° S) pertenece a la zona central del área de estudio. Se identificaron 943 días de evento conjunto (11,0 % de los días evaluables), en 276 rachas de 3,4 días de duración media. En esos días la anomalía de SSHF fue 1,58 W m⁻² mayor que en el resto (IC 95 %: +0,75 a +2,40), y la diferencia se mantiene tras el ajuste de Holm. El flujo medio es negativo en ambos grupos (−2,2 y −4,0 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "resumen": "Punta Curaumilla: el núcleo analítico está centrado en 33,0° S, en la zona central del área de estudio. Esta coordenada representa el mínimo de variabilidad de TSM seleccionado, no la posición del cabo geográfico. Se identificaron 943 días de evento conjunto (11,0 % de los días evaluables), en 276 rachas de 3,4 días de duración media. En esos días la anomalía de SSHF fue 1,58 W m⁻² mayor que en el resto (IC 95 %: +0,75 a +2,40), y la diferencia se mantiene tras el ajuste de Holm. El flujo medio es negativo en ambos grupos (−2,2 y −4,0 W m⁻²): el océano pierde calor sensible también durante los eventos.",
    "limitaciones": [
-    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+    "Las referencias aportan contexto regional; no verifican por sí solas las coordenadas ni los límites del núcleo analítico."
    ],
    "figuras": [
     {
@@ -831,7 +831,7 @@
      -33.795
     ]
    },
-   "referencia": "Letelier et al. 2009, doi:10.1029/2008JC005171",
+   "referencia": "Contexto regional: Letelier et al. 2009, doi:10.1029/2008JC005171. La atribución específica a este núcleo y sus límites no está confirmada.",
    "umbrales": {
     "ui": 544.3,
     "cuisst_mensual": [
@@ -945,10 +945,10 @@
     ]
    },
    "serie": "series/pta_topocalma.json",
-   "resumen": "Punta Topocalma (34,4° S) pertenece a la zona central del área de estudio. Se identificaron 952 días de evento conjunto (11,1 % de los días evaluables), en 257 rachas de 3,7 días de duración media. No se detectó diferencia en la anomalía de SSHF entre los días de evento y el resto (+0,03 W m⁻²; IC 95 %: −1,14 a +1,20). El flujo medio es negativo en ambos grupos (−22,1 y −19,5 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "resumen": "Punta Topocalma: el núcleo analítico está centrado en 34,4° S, en la zona central del área de estudio. Esta coordenada representa el mínimo de variabilidad de TSM seleccionado, no la posición del cabo geográfico. Se identificaron 952 días de evento conjunto (11,1 % de los días evaluables), en 257 rachas de 3,7 días de duración media. No se detectó diferencia en la anomalía de SSHF entre los días de evento y el resto (+0,03 W m⁻²; IC 95 %: −1,14 a +1,20). El flujo medio es negativo en ambos grupos (−22,1 y −19,5 W m⁻²): el océano pierde calor sensible también durante los eventos.",
    "limitaciones": [
     "Que no se detecte una diferencia anual no demuestra que el SSHF no responda: el contraste por estaciones (exploratorio) sugiere respuestas de signo distinto en verano e invierno.",
-    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+    "Las referencias aportan contexto regional; no verifican por sí solas las coordenadas ni los límites del núcleo analítico."
    ],
    "figuras": [
     {
@@ -997,7 +997,7 @@
      -35.575
     ]
    },
-   "referencia": "Letelier et al. 2009, doi:10.1029/2008JC005171",
+   "referencia": "Contexto regional: Letelier et al. 2009, doi:10.1029/2008JC005171. La atribución específica a este núcleo y sus límites no está confirmada.",
    "umbrales": {
     "ui": 540.5,
     "cuisst_mensual": [
@@ -1111,10 +1111,10 @@
     ]
    },
    "serie": "series/pta_nugurne.json",
-   "resumen": "Punta Nugurne (35,8° S) pertenece a la zona centro-sur del área de estudio. Se identificaron 776 días de evento conjunto (9,0 % de los días evaluables), en 225 rachas de 3,5 días de duración media. En esos días la anomalía de SSHF fue 2,75 W m⁻² mayor que en el resto (IC 95 %: +1,11 a +4,13), y la diferencia se mantiene tras el ajuste de Holm. Es el único foco donde el flujo medio cambia de signo: −1,0 W m⁻² en el resto de los días y +3,6 W m⁻² durante los eventos.",
+   "resumen": "Punta Nugurne: el núcleo analítico está centrado en 35,8° S, en la zona centro-sur del área de estudio. Esta coordenada representa el mínimo de variabilidad de TSM seleccionado, no la posición del cabo geográfico. Se identificaron 776 días de evento conjunto (9,0 % de los días evaluables), en 225 rachas de 3,5 días de duración media. En esos días la anomalía de SSHF fue 2,75 W m⁻² mayor que en el resto (IC 95 %: +1,11 a +4,13), y la diferencia se mantiene tras el ajuste de Holm. Es el único foco donde el flujo medio cambia de signo: −1,0 W m⁻² en el resto de los días y +3,6 W m⁻² durante los eventos.",
    "limitaciones": [
     "La variabilidad diaria del SSHF en esta zona es aproximadamente el doble que en el norte, y los intervalos son más anchos.",
-    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+    "Las referencias aportan contexto regional; no verifican por sí solas las coordenadas ni los límites del núcleo analítico."
    ],
    "figuras": [
     {
@@ -1163,7 +1163,7 @@
      -36.875
     ]
    },
-   "referencia": "Letelier et al. 2009, doi:10.1029/2008JC005171",
+   "referencia": "Contexto regional: Letelier et al. 2009, doi:10.1029/2008JC005171. La atribución específica a este núcleo y sus límites no está confirmada.",
    "umbrales": {
     "ui": 540.5,
     "cuisst_mensual": [
@@ -1277,12 +1277,12 @@
     ]
    },
    "serie": "series/pta_lavapie.json",
-   "resumen": "Punta Lavapié (36,6° S) pertenece a la zona centro-sur del área de estudio. Se identificaron 728 días de evento conjunto (8,5 % de los días evaluables), en 220 rachas de 3,3 días de duración media. La diferencia estimada de anomalía de SSHF es positiva (+1,42 W m⁻²; IC 95 %: −0,16 a +2,87), pero no supera el ajuste por comparaciones múltiples. El flujo medio es negativo en ambos grupos (−9,1 y −8,4 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "resumen": "Punta Lavapié: el núcleo analítico está centrado en 36,6° S, en la zona centro-sur del área de estudio. Esta coordenada representa el mínimo de variabilidad de TSM seleccionado, no la posición del cabo geográfico. Se identificaron 728 días de evento conjunto (8,5 % de los días evaluables), en 220 rachas de 3,3 días de duración media. La diferencia estimada de anomalía de SSHF es positiva (+1,42 W m⁻²; IC 95 %: −0,16 a +2,87), pero no supera el ajuste por comparaciones múltiples. El flujo medio es negativo en ambos grupos (−9,1 y −8,4 W m⁻²): el océano pierde calor sensible también durante los eventos.",
    "limitaciones": [
     "El intervalo individual y la decisión ajustada responden a preguntas distintas: aquí el efecto estimado es positivo, pero la evidencia no alcanza tras corregir por ocho comparaciones.",
     "La variabilidad diaria del SSHF en esta zona es aproximadamente el doble que en el norte, y los intervalos son más anchos.",
     "El contraste de invierno se apoya en solo 75 días de evento; su magnitud es imprecisa.",
-    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+    "Las referencias aportan contexto regional; no verifican por sí solas las coordenadas ni los límites del núcleo analítico."
    ],
    "figuras": [
     {
@@ -1331,7 +1331,7 @@
      -39.625
     ]
    },
-   "referencia": "Letelier et al. 2009, doi:10.1029/2008JC005171",
+   "referencia": "Contexto regional: Letelier et al. 2009, doi:10.1029/2008JC005171. La atribución específica a este núcleo y sus límites no está confirmada.",
    "umbrales": {
     "ui": 540.5,
     "cuisst_mensual": [
@@ -1445,13 +1445,13 @@
     ]
    },
    "serie": "series/pta_galera.json",
-   "resumen": "Punta Galera (39,4° S) pertenece a la zona centro-sur del área de estudio. Se identificaron 501 días de evento conjunto (5,8 % de los días evaluables), en 185 rachas de 2,7 días de duración media. No se detectó diferencia en la anomalía de SSHF entre los días de evento y el resto (+0,19 W m⁻²; IC 95 %: −1,79 a +1,91). El flujo medio es negativo en ambos grupos (−0,4 y −3,0 W m⁻²): el océano pierde calor sensible también durante los eventos.",
+   "resumen": "Punta Galera: el núcleo analítico está centrado en 39,4° S, en la zona centro-sur del área de estudio. Esta coordenada representa el mínimo de variabilidad de TSM seleccionado, no la posición del cabo geográfico. Se identificaron 501 días de evento conjunto (5,8 % de los días evaluables), en 185 rachas de 2,7 días de duración media. No se detectó diferencia en la anomalía de SSHF entre los días de evento y el resto (+0,19 W m⁻²; IC 95 %: −1,79 a +1,91). El flujo medio es negativo en ambos grupos (−0,4 y −3,0 W m⁻²): el océano pierde calor sensible también durante los eventos.",
    "limitaciones": [
     "Que no se detecte una diferencia anual no demuestra que el SSHF no responda: el contraste por estaciones (exploratorio) sugiere respuestas de signo distinto en verano e invierno.",
     "Es el foco con menos días de evento (501), lo que reduce la precisión de todas sus estimaciones.",
     "La variabilidad diaria del SSHF en esta zona es aproximadamente el doble que en el norte, y los intervalos son más anchos.",
     "El contraste de invierno se apoya en solo 38 días de evento; su magnitud es imprecisa.",
-    "La referencia bibliográfica del foco es la registrada en el código de la tesis."
+    "Las referencias aportan contexto regional; no verifican por sí solas las coordenadas ni los límites del núcleo analítico."
    ],
    "figuras": [
     {

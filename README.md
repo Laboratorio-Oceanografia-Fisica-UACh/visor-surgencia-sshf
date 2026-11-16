@@ -1,19 +1,27 @@
 # visor-surgencia-sshf
 Visor interactivo de surgencia costera y flujos de calor sensible en Chile.
 
-Presenta resultados precalculados de la tesis de Biología Marina de Vicente Jara
-Juleff, «Flujo de calor sensible como proxy de surgencia costera en el centro y norte
-de Chile» (UACh, 2026), en el Laboratorio de Oceanografía Física de la Universidad
+Presenta resultados precalculados del proyecto «Flujo de calor sensible superficial
+como indicador de eventos de surgencia costera», título inscrito en OFMC 2026,
+desarrollado por Vicente Jara Juleff en su tesis de Biología Marina (UACh, 2026),
+en el Laboratorio de Oceanografía Física de la Universidad
 Austral de Chile. El mapa, las fichas de ocho focos, los gráficos y las figuras
 permiten explorar el período junio de 2002–diciembre de 2025.
 
 Las fuentes científicas son ERA5 (viento, SSHF y temperatura del aire;
 [Hersbach et al., 2020](https://doi.org/10.1002/qj.3803)) y MUR SST v4.1
-(TSM, JPL/PO.DAAC; cita formal pendiente de completar). Los resultados anuales
+(JPL MUR MEaSUREs Project, 2015, GHRSST Level 4 MUR Global Foundation Sea Surface
+Temperature Analysis v4.1, PO.DAAC; [DOI](https://doi.org/10.5067/GHGMR-4FJ04)). Los resultados anuales
 incluyen intervalos individuales del 95 % por remuestreo de años completos y
 valores p ajustados por Holm sobre ocho focos. Los contrastes por estación están
 marcados como **exploratorios**. SSHF positivo significa que el océano gana calor;
 ΔSSHF′ es la anomalía en días de evento menos la del resto.
+
+Las coordenadas de los marcadores son los centros analíticos de mínima variabilidad
+de TSM, asociados a los focos nombrados; no son la posición geográfica de los cabos.
+La ficha distingue esa posición de la latitud costera que ancla la caja de viento.
+Las referencias de los focos se presentan como contexto regional, sin afirmar que
+validen individualmente las coordenadas o límites seleccionados.
 
 ## Ejecutar localmente
 
@@ -33,10 +41,13 @@ Comprobaciones locales con Node.js:
 ```sh
 node js/comprobar_datos.mjs data
 node js/comprobar_formato.mjs
+node js/comprobar_publicacion.mjs
 ```
 
 Los contratos JSON están en `data/esquema/`. `data/version.json` conserva la
-procedencia técnica de los resultados; `inventario-publico.json` registra tamaños
+procedencia técnica de los resultados (su commit es el de generación original);
+`data/edicion.json` identifica la reexportación editorial sin recálculo.
+`inventario-publico.json` registra tamaños
 y SHA-256 de los archivos importados y preparados.
 
 ## Actualizar los datos públicos
@@ -56,8 +67,8 @@ internas de procesamiento.
 
 ## GitHub Pages
 
-**Despliegue pendiente de auditoría y autorización.** Después de la revisión y de la
-integración autorizada en `main`, configurar Settings → Pages → Deploy from a branch →
+Después de resolver las autorizaciones de publicación y de la integración en
+`main`, configurar Settings → Pages → Deploy from a branch →
 `main` → `/(root)`, según la [guía de GitHub](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 La URL prevista es
 <https://laboratorio-oceanografia-fisica-uach.github.io/visor-surgencia-sshf/>.
@@ -67,6 +78,9 @@ No se incluye un workflow de despliegue propio.
 ## Autorizaciones pendientes
 
 No se ha establecido una licencia para el proyecto: queda pendiente de autorización
-institucional. Los logos aún no están incorporados. Ver [créditos y contenidos de
-terceros](TERCEROS.md), incluidas las referencias cuya atribución a cada foco requiere
-revisión documental antes de publicar.
+institucional. Se ha preparado el logo oficial LOFA, con transparencia y proporción
+conservadas, para su uso en la cabecera y el favicon. Su incorporación local no acredita
+por sí sola permiso de difusión. Ver [créditos y contenidos de terceros](TERCEROS.md).
+Los visitantes encuentran las referencias y créditos en la sección correspondiente
+del sitio. La autorización de difusión y una eventual licencia de reutilización son
+decisiones distintas; no se establece una licencia general por defecto.
