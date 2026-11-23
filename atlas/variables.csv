@@ -1,0 +1,28 @@
+campo,unidad,fuente,definicion
+fecha,AAAA-MM-DD,calendario,Fecha UTC
+ui,m³ s⁻¹ km⁻¹,ERA5 y normal MATLAB,Transporte integrado proyectado sobre la normal oceánica
+ui_p,m³ s⁻¹ km⁻¹,ERA5,UI menos su climatología diaria histórica
+u,m s⁻¹,ERA5,Viento a 10 m hacia el este
+v,m s⁻¹,ERA5,Viento a 10 m hacia el norte
+vel,m s⁻¹,ERA5,Promedio espacial de la rapidez en las celdas efectivas
+dir,grados,ERA5,Dirección desde la cual llega el viento calculada con las componentes medias; desde el norte en sentido horario
+tx,N m⁻²,ERA5,Componente este del esfuerzo medio estimado
+ty,N m⁻²,ERA5,Componente norte del esfuerzo medio estimado
+tau,N m⁻²,ERA5,Magnitud del vector medio de esfuerzo
+tal,N m⁻²,ERA5 y normal MATLAB,Esfuerzo paralelo en la convención del pipeline
+qx,m² s⁻¹,ERA5,Componente este del transporte integrado de Ekman por unidad de costa
+qy,m² s⁻¹,ERA5,Componente norte del transporte integrado de Ekman por unidad de costa
+ta,°C,ERA5,Temperatura a 2 m en las celdas atmosféricas de la extracción original
+ta_p,°C,ERA5,Temperatura a 2 m menos su climatología diaria histórica
+tc,°C,MUR,Promedio costero de píxeles alrededor del mínimo diario
+tc_p,°C,MUR,Anomalía costera con climatología térmica mes-día
+to,°C,MUR,Promedio oceánico de píxeles alrededor del máximo diario
+to_p,°C,MUR,Anomalía de mar abierto con climatología térmica mes-día
+cu,°C,MUR,Temperatura oceánica menos costera
+cu_p,°C,MUR,Anomalía del contraste con climatología térmica mes-día
+sshf,W m⁻²,ERA5 de máscara cero,Flujo sensible absoluto positivo hacia la superficie
+sshf_p,W m⁻²,ERA5 de máscara cero,Anomalía diaria de flujo sensible con climatología histórica
+dt,°C,ERA5 y MUR,Temperatura del aire a 2 m menos media costera del rectángulo MUR (aire del muestreo original)
+episodio,0 o 1 o ausente,ERA5 y MUR,Coincidencia de rachas de viento y de contraste térmico. Ausente sin MUR.
+viento_favorable,0 o 1,ERA5,Racha persistente de viento favorable original
+umbral_termico,°C,MUR,Umbral climatológico diario suavizado del contraste

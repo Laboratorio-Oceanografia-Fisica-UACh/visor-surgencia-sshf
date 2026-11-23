@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#103b49" />
+    <title>Biblioteca científica · Atlas de surgencia UACh</title>
+    <link rel="icon" href="../assets/favicon.png" />
+    <link rel="stylesheet" href="../css/atlas.css" />
+    <link rel="stylesheet" href="./biblioteca.css" />
+    <script type="module" src="./biblioteca.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#biblioteca">Saltar a las referencias</a>
+    <header class="mast">
+      <div class="mast-in">
+        <a class="brand" href="../"
+          ><img src="../assets/marca.webp" alt="LOFA" /><span
+            >Atlas de surgencia<small>Oceanografía Física · UACh</small></span
+          ></a
+        ><a class="poster-link volver" href="../">Volver al atlas ↗</a>
+      </div>
+    </header>
+    <section class="libhero">
+      <div class="wrap">
+        <span class="eyebrow">Laboratorio de Oceanografía Física · UACh</span>
+        <h1>Biblioteca <em>científica</em></h1>
+        <p>
+          Publicaciones citadas y literatura recopilada para la tesis sobre
+          surgencia costera e intercambio de calor frente a Chile.
+        </p>
+        <div class="actions">
+          <a class="btn primary" download href="referencias.bib"
+            >Descargar BibTeX ↓</a
+          ><a class="btn ghost" download href="referencias.csv"
+            >Inventario CSV ↓</a
+          >
+        </div>
+      </div>
+    </section>
+    <main id="biblioteca" class="wrap section">
+      <div class="toolbar panel">
+        <label class="field buscador"
+          >Buscar referencias<input
+            type="search"
+            id="buscar"
+            placeholder="Autor, título, año o DOI" /></label
+        ><label class="field">Tema<select id="tema"></select></label
+        ><label class="field"
+          >Uso<select id="uso">
+            <option value="">Todos</option>
+            <option>Citada en documentos</option>
+            <option>Recopilada o consultada</option>
+          </select></label
+        ><label class="field"
+          >Orden<select id="orden">
+            <option value="reciente">Más recientes</option>
+            <option value="antigua">Más antiguas</option>
+            <option value="autor">Autor · A–Z</option>
+            <option value="titulo">Título · A–Z</option>
+          </select></label
+        >
+      </div>
+      <p class="totales">
+        <output id="n" aria-live="polite">Cargando referencias…</output>
+      </p>
+      <div id="lista"></div>
+      <button id="mas" class="control" hidden>Mostrar más referencias</button>
+      <details class="origen">
+        <summary>Fuentes y criterios del inventario</summary>
+        <p>
+          El inventario reúne el proyecto de investigación, los artículos de la
+          colección local, los informes de la tesis, sus auditorías y las
+          referencias recuperadas de Git. Se comprobó la identidad mediante
+          Crossref, DataCite, registros editoriales y portadas. La ficha
+          identifica el nivel de verificación y la colección de procedencia.
+          «Recopilada o consultada» indica pertenencia a la colección. Una cita
+          o un DOI confirmado por sí solo no acreditan lectura integral ni
+          validación metodológica.
+        </p>
+      </details>
+    </main>
+    <footer>
+      <div>
+        <strong>Laboratorio de Oceanografía Física</strong>
+        <p>Universidad Austral de Chile · Vicente Jara Juleff</p>
+      </div>
+      <a href="../qr/">Códigos QR para impresión</a
+      ><a href="../#metodo">Metodología de la tesis →</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,516 @@
+@font-face {
+  font-family: DM Sans;
+  src: url(../assets/fuentes/dm.woff2);
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Instrument Serif;
+  src: url(../assets/fuentes/serif.woff2);
+  font-display: swap;
+}
+:root {
+  color-scheme: dark;
+  font:
+    16px "DM Sans",
+    Arial,
+    sans-serif;
+  color: #ecf4f2;
+  background: #0a1720;
+  --borde: #32434c;
+  --menta: #9be4cf;
+  --suave: #b5c6c9;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+a {
+  color: var(--menta);
+  text-underline-offset: 0.24em;
+}
+button,
+select,
+input {
+  font: inherit;
+  color: inherit;
+  accent-color: var(--menta);
+}
+button,
+select {
+  min-height: 42px;
+  border: 1px solid var(--borde);
+  border-radius: 5px;
+  background: #132630;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.42;
+  cursor: default;
+}
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #ffe1a2;
+  outline-offset: 3px;
+}
+.ancho {
+  width: min(calc(100% - 72px), 1380px);
+  margin: auto;
+}
+.barra {
+  border-bottom: 1px solid var(--borde);
+  background: #101f29;
+}
+.marca {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 63px;
+}
+.marca a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 11px;
+}
+.marca img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #eff5f3;
+}
+.marca span {
+  font-weight: 660;
+  color: #fff;
+  line-height: 1.05;
+}
+.marca small {
+  display: block;
+  font-weight: 420;
+  font-size: 0.72rem;
+  color: var(--suave);
+  margin-top: 4px;
+}
+.regreso {
+  font-size: 0.86rem;
+}
+h1 {
+  font:
+    normal clamp(2.45rem, 4.3vw, 4.35rem) / 1.04 "Instrument Serif",
+    Georgia,
+    serif;
+  letter-spacing: -0.025em;
+  margin: 32px 0 9px;
+}
+.introduccion {
+  color: var(--suave);
+  margin: 0 0 23px;
+  line-height: 1.5;
+}
+.casos {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.casos button {
+  font-weight: 680;
+  background: transparent;
+  padding: 8px 16px;
+}
+.casos span {
+  color: var(--suave);
+  font-weight: 420;
+  font-size: 0.82rem;
+  margin-left: 10px;
+}
+.casos [aria-pressed="true"] {
+  border-color: #7bb8aa;
+  background: #1a383b;
+  color: #c8f6e6;
+}
+.controles {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 12px 0 16px;
+}
+.controles label {
+  display: grid;
+  gap: 4px;
+  font-size: 0.76rem;
+  color: var(--suave);
+}
+.controles select {
+  font-size: 0.87rem;
+  color: #eef4f4;
+}
+.controles .check {
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  min-height: 42px;
+  gap: 6px;
+  font-size: 0.86rem;
+}
+.check input {
+  width: 16px;
+  height: 16px;
+}
+.escena {
+  background: #0c1821;
+  border: 1px solid var(--borde);
+  border-radius: 9px;
+  overflow: hidden;
+}
+.estampa,
+.pie-escena,
+.serie header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.estampa {
+  padding: 12px 19px;
+  background: #172a33;
+  font-size: 0.92rem;
+}
+.estampa strong {
+  font-weight: 650;
+}
+.estampa time {
+  font-variant-numeric: tabular-nums;
+  font-weight: 630;
+  color: #ddf7ef;
+}
+.luz {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--menta);
+  display: inline-block;
+  margin-right: 7px;
+}
+#marca-episodio {
+  font-size: 0.78rem;
+  color: var(--suave);
+  margin-left: 8px;
+}
+.paneles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--borde);
+}
+.paneles.simple {
+  grid-template-columns: minmax(0, 1fr);
+}
+.paneles article {
+  background: #0c1821;
+  min-width: 0;
+}
+.paneles header {
+  padding: 13px 18px 10px;
+}
+.paneles small {
+  color: var(--menta);
+  font-size: 0.74rem;
+  letter-spacing: 0.045em;
+}
+.paneles h2 {
+  font:
+    500 clamp(1.05rem, 1.55vw, 1.55rem) / 1.25 "DM Sans",
+    sans-serif;
+  margin: 4px 0 0;
+}
+.paneles canvas {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/0.605;
+  display: block;
+  background: #0d1e29;
+}
+.paneles.simple canvas {
+  width: min(100%, 860px);
+  margin: auto;
+}
+.leyenda {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px 12px;
+  gap: 10px;
+  font-size: 0.81rem;
+}
+.leyenda b {
+  font-weight: 500;
+}
+.leyenda .escala {
+  width: 49%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.72rem;
+}
+.escala span {
+  grid-column: 1/-1;
+  height: 6px;
+  border-radius: 2px;
+  margin-bottom: 3px;
+}
+.escala i {
+  font-style: normal;
+  text-align: left;
+}
+.pie-escena {
+  border-top: 1px solid var(--borde);
+  padding: 9px 18px;
+  font-size: 0.76rem;
+  color: #c4d1d3;
+}
+.pie-escena span {
+  flex: 1;
+}
+.reproductor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+.reproductor button {
+  min-width: 42px;
+  font-weight: 620;
+}
+#play {
+  background: var(--menta);
+  color: #102f30;
+  border-color: var(--menta);
+  min-width: 120px;
+}
+.tiempo {
+  flex: 1;
+  min-width: 0;
+}
+.tiempo input {
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+.rango {
+  display: flex;
+  justify-content: space-between;
+  color: var(--suave);
+  font-size: 0.75rem;
+}
+.reproductor select {
+  font-size: 0.88rem;
+}
+#estado {
+  color: #ffdd9d;
+}
+#estado:empty {
+  display: none;
+}
+.serie,
+details,
+.descargas {
+  border-top: 1px solid var(--borde);
+  margin-top: 25px;
+  padding: 16px 0;
+}
+.serie h2,
+.descargas h2 {
+  font:
+    normal 1.7rem "Instrument Serif",
+    Georgia,
+    serif;
+  margin: 0;
+}
+.serie a,
+.descargas a {
+  font-size: 0.86rem;
+}
+dl {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 15px;
+}
+dt {
+  color: var(--suave);
+  font-size: 0.77rem;
+}
+dd {
+  margin: 5px 0;
+  font-size: 1.24rem;
+  font-variant-numeric: tabular-nums;
+}
+#sensibilidad {
+  color: #dfcea6;
+  font-size: 0.85rem;
+}
+details {
+  color: var(--suave);
+  line-height: 1.6;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #edf4f2;
+}
+details p {
+  max-width: 94ch;
+}
+.descargas div {
+  display: inline-flex;
+  gap: 14px;
+  margin: 14px 24px 0 0;
+}
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+footer.ancho {
+  padding: 26px 0;
+  color: var(--suave);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--borde);
+}
+noscript img {
+  max-width: 100%;
+}
+[hidden] {
+  display: none !important;
+}
+#alternativa,
+noscript figure {
+  margin: 12px 0;
+}
+#alternativa img {
+  max-width: 100%;
+  height: auto;
+}
+.escena:has(.simple) {
+  max-width: 980px;
+  margin-inline: auto;
+}
+.paneles.simple canvas {
+  width: 100%;
+}
+.leyenda .escala {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.escala i:nth-child(3) {
+  text-align: center;
+}
+.escala i:last-child {
+  text-align: right;
+}
+@media (min-width: 761px) {
+  dl {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .ancho {
+    width: calc(100% - 26px);
+  }
+  h1 {
+    margin-top: 23px;
+  }
+  .introduccion {
+    font-size: 0.94rem;
+  }
+  .casos {
+    gap: 7px;
+  }
+  .casos button {
+    flex: 1;
+  }
+  .casos span {
+    display: block;
+    margin: 3px 0 0;
+  }
+  .controles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .controles label,
+  .controles select {
+    min-width: 0;
+  }
+  .controles .check {
+    grid-column: 1/-1;
+    min-height: 30px;
+  }
+  .paneles {
+    grid-template-columns: 1fr;
+  }
+  .estampa,
+  .pie-escena {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .estampa {
+    padding: 9px 12px;
+  }
+  .estampa time {
+    font-size: 0.86rem;
+  }
+  .pie-escena {
+    display: grid;
+  }
+  .paneles header {
+    padding: 10px 12px 8px;
+  }
+  .reproductor {
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  #play {
+    min-width: 92px;
+  }
+  .tiempo {
+    flex-basis: calc(100% - 259px);
+  }
+  dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .marca {
+    min-height: 54px;
+  }
+  .leyenda {
+    padding: 9px 12px;
+  }
+  .rango {
+    font-size: 0.67rem;
+  }
+  .serie header {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 410px) {
+  .reproductor .tiempo {
+    order: -1;
+    flex-basis: 100%;
+  }
+  #marca-episodio {
+    display: block;
+    margin-left: 17px;
+  }
+  .ancho {
+    width: calc(100% - 22px);
+  }
+}

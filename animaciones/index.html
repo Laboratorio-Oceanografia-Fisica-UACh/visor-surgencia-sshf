@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <base href="../" />
+    <title>
+      Animaciones de campos oceanográficos · Atlas de surgencia UACh
+    </title>
+    <link rel="icon" href="assets/favicon.png" />
+    <link rel="stylesheet" href="css/animaciones.css" />
+    <script type="module" src="js/animaciones.mjs"></script>
+    <noscript
+      ><style>
+        .escena,
+        .controles,
+        .reproductor,
+        .casos,
+        .serie,
+        #alternativa {
+          display: none !important;
+        }
+      </style></noscript
+    >
+  </head>
+  <body>
+    <header class="barra">
+      <div class="ancho marca">
+        <a href="./#inicio"
+          ><img src="assets/marca.webp" alt="LOFA" /><span
+            >Atlas de surgencia <small>Oceanografía Física · UACh</small></span
+          ></a
+        ><a class="regreso" href="./#campos">← Volver al atlas</a>
+      </div>
+    </header>
+    <main class="ancho">
+      <h1>Animaciones de campos oceanográficos</h1>
+      <p class="introduccion">
+        Sigue el viento, la temperatura del mar y el flujo de calor sensible
+        antes y después del inicio de dos rachas de viento favorable frente a
+        Chile.
+      </p>
+      <div class="casos" aria-label="Intervalo temporal">
+        <button data-caso="lavapie" aria-pressed="true">
+          Lavapié <span>Verano · enero 2015</span></button
+        ><button data-caso="angamos" aria-pressed="false">
+          Angamos <span>Invierno · junio 2015</span>
+        </button>
+      </div>
+      <div class="controles">
+        <label
+          >Vista<select id="vista">
+            <option value="doble">Dos mapas sincronizados</option>
+            <option value="simple">Un mapa</option>
+          </select></label
+        >
+        <label>Dominio<select id="dominio"></select></label>
+        <label>Campo<select id="campo"></select></label>
+        <label
+          >Vectores<select id="vector">
+            <option value="aire">Viento a 10 m</option>
+            <option value="ek">Transporte de Ekman</option>
+            <option value="none">Sin flechas</option>
+          </select></label
+        >
+        <label class="check"
+          ><input type="checkbox" id="contornos" checked /> Isolíneas de
+          flujo sensible</label
+        >
+      </div>
+      <figure id="alternativa" hidden>
+        <img alt="Fotograma de referencia de los campos oceanográficos" />
+        <figcaption></figcaption>
+      </figure>
+      <noscript
+        ><figure>
+          <img
+            src="animaciones/media/lavapie-doble.png"
+            alt="Mapas de esfuerzo del viento y temperatura frente a Lavapié el 22 de enero de 2015"
+          />
+          <figcaption>Lavapié · 22 de enero de 2015</figcaption>
+        </figure></noscript
+      >
+      <section
+        class="escena"
+        aria-label="Campos diarios sincronizados"
+        aria-busy="true"
+      >
+        <div class="estampa">
+          <div>
+            <span class="luz"></span><strong id="lugar">Lavapié</strong>
+            <span id="marca-episodio"></span>
+          </div>
+          <time id="fecha"></time>
+        </div>
+        <div class="paneles">
+          <article id="panel-a">
+            <header>
+              <small id="fuente-a">ERA5 · malla 0,25°</small>
+              <h2 id="titulo-a">Viento y transporte de Ekman</h2>
+            </header>
+            <canvas
+              id="mapa-a"
+              role="img"
+              aria-label="Mapa diario de forzamiento"
+            ></canvas>
+            <div class="leyenda" id="leyenda-a"></div>
+          </article>
+          <article id="panel-b">
+            <header>
+              <small>MUR · malla nativa 0,01°</small>
+              <h2>Temperatura superficial y flujo de calor</h2>
+            </header>
+            <canvas
+              id="mapa-b"
+              role="img"
+              aria-label="Mapa diario de temperatura y flujo sensible"
+            ></canvas>
+            <div class="leyenda" id="leyenda-b"></div>
+          </article>
+        </div>
+        <div class="pie-escena">
+          <span id="clave-viento"></span><span id="clave-calor"></span>
+        </div>
+      </section>
+      <div class="reproductor">
+        <button id="play" aria-label="Reproducir" disabled>
+          ▶ Reproducir
+        </button>
+        <button id="menos" aria-label="Día anterior">‹</button>
+        <label class="tiempo"
+          ><span class="sr">Fecha compartida</span
+          ><input
+            id="dia"
+            type="range"
+            min="0"
+            max="13"
+            value="4"
+            step="1" /><span class="rango"
+            ><span id="primero"></span><span id="ultimo"></span></span
+        ></label>
+        <button id="mas" aria-label="Día siguiente">›</button>
+        <label class="rapidez"
+          ><span class="sr">Velocidad de reproducción</span
+          ><select id="velocidad">
+            <option value="1600">0,5×</option>
+            <option value="800" selected>1×</option>
+            <option value="400">2×</option>
+          </select></label
+        >
+      </div>
+      <p id="estado" role="status"></p>
+      <section
+        class="serie"
+        aria-label="Datos del foco en la fecha seleccionada"
+      >
+        <header>
+          <h2 id="nombre-foco">Datos del foco</h2>
+          <a id="serie-link" href="./#explorar">Explorar serie ↗</a>
+        </header>
+        <dl id="lecturas"></dl>
+        <p id="sensibilidad"></p>
+      </section>
+      <details>
+        <summary>Cómo leer los mapas</summary>
+        <p>
+          Un día por fotograma. ERA5 aporta las medias diarias UTC del viento a
+          10 m y del flujo sensible instantáneo. MUR aporta su análisis diario
+          de temperatura superficial a las 09 UTC. El campo térmico muestra la
+          TSM absoluta. La anomalía térmica de la ficha corresponde al estimador
+          costero del foco.
+        </p>
+        <p>
+          La magnitud del esfuerzo se calcula a partir del vector medio diario.
+          El transporte de Ekman, en m²/s, integra el movimiento en profundidad
+          y se orienta a la izquierda del esfuerzo en el hemisferio sur. Las
+          flechas tienen una escala propia. El UI es la proyección sobre la
+          normal oceánica del foco. Las ventanas ilustran el viento. En la ficha, un episodio requiere además un contraste térmico persistente.
+        </p>
+        <p>
+          Los campos de viento usan centros de 0,25° con fracción de
+          océano ≥ 0,70 según MUR. El color se interpola entre cuatro centros
+          válidos. En los bordes se usa el centro más próximo si es marino. El flujo se muestra sólo en centros válidos con fracción terrestre ERA5 exactamente cero. Las isolíneas requieren cuatro centros válidos. La TSM se promedia en
+          bloques de 0,04° con al menos ocho de dieciséis píxeles marinos
+          válidos. Gris indica tierra y azul casi negro indica falta de
+          cobertura. Los puntos señalan los cabos. Las escalas se mantienen
+          entre días y regiones.
+        </p>
+        <p>
+          Las ventanas abarcan cuatro días antes y nueve después del primer
+          inicio de viento favorable de enero en Lavapié y de junio en Angamos en 2015.
+          Cambiar el dominio conserva las fechas del caso. La secuencia permite
+          comparar asociaciones en superficie. La observación del ascenso
+          vertical requiere otras mediciones.
+        </p>
+      </details>
+      <section class="descargas">
+        <h2>Animaciones para descargar</h2>
+        <div>
+          <a download href="animaciones/media/angamos-viento.mp4"
+            >Angamos · viento (MP4) ↓</a
+          ><a
+            download
+            href="animaciones/media/angamos-viento.png"
+            aria-label="Fotograma de Angamos en PNG"
+            >Fotograma PNG ↓</a
+          >
+        </div>
+        <div>
+          <a download href="animaciones/media/lavapie-doble.mp4"
+            >Lavapié · dos mapas (MP4) ↓</a
+          ><a
+            download
+            href="animaciones/media/lavapie-doble.png"
+            aria-label="Fotograma de Lavapié en PNG"
+            >Fotograma PNG ↓</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="ancho">
+      Laboratorio de Oceanografía Física · Universidad Austral de Chile
+    </footer>
+  </body>
+</html>
