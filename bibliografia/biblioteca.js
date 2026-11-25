@@ -28,8 +28,14 @@ function render() {
       (!uso || r.uso === uso) &&
       normal([r.autores, r.titulo, r.anio, r.doi].join(" ")).includes(term),
   );
+  const usoRango = (r) => (r.uso === "Citada en documentos" ? 0 : 1);
   data.sort((a, b) =>
-    orden === "titulo"
+    orden === "relevancia"
+      ? (a.relevancia || 999) - (b.relevancia || 999) ||
+        usoRango(a) - usoRango(b) ||
+        Number(b.anio) - Number(a.anio) ||
+        a.titulo.localeCompare(b.titulo, "es")
+      : orden === "titulo"
       ? a.titulo.localeCompare(b.titulo, "es")
       : orden === "autor"
         ? a.autores.localeCompare(b.autores, "es")
@@ -50,6 +56,8 @@ function render() {
         ". " +
         r.publicacion +
         (r.url ? ". " + r.url : "");
+    if (r.rol_poster)
+      item.append(crear("span", "Base del póster · " + r.rol_poster, "principal"));
     item.append(
       crear("small", r.anio + " · " + r.uso),
       crear("h2", r.titulo),
